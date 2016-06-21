@@ -1,3 +1,4 @@
+(function () {
 "use strict";
 
 var Vector2 = exports.ctor = function (x, y) {
@@ -42,3 +43,5 @@ Object.defineProperty(proto, "angle", {
     return Math.atan2(this.y, this.x);
   }
 });
+
+})();
