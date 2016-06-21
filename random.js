@@ -1,3 +1,4 @@
+"use strict";
 // A seeded, pseudo-random number generator
 // https://en.wikipedia.org/wiki/Linear_congruential_generator
 

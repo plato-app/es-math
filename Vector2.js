@@ -1,3 +1,5 @@
+"use strict";
+
 var Vector2 = exports.ctor = function (x, y) {
   this.x = x;
   this.y = y;
