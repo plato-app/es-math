@@ -24,6 +24,12 @@ proto.identity = function () {
   );
 };
 
+proto.clone = function () {
+  var mat3 = new Matrix3();
+  mat3.set.apply(mat3, this.values);
+  return mat3;
+};
+
 proto.multiply = function (m) {
   Matrix3.multiply(this, m, this);
   return this;
