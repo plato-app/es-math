@@ -19,7 +19,7 @@ var proto = Transform.prototype;
 
 proto.clone = function () {
   var transform = new Transform();
-  transform.set.apply(mat3, this.values);
+  transform.set.apply(transform, this.values);
   return transform;
 };
 
