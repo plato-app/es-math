@@ -40,8 +40,12 @@ proto.subtract = function (v) {
 
 Object.defineProperty(proto, "angle", {
   get: function () {
-    return Math.atan2(this.y, this.x);
+    return Vector2.angle(this.x, this.y);
   }
 });
+
+Vector2.angle = function (x, y) {
+  return Math.atan2(y, x);
+};
 
 })();
