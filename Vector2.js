@@ -38,11 +38,30 @@ proto.subtract = function (v) {
   return this;
 };
 
+proto.normalize = function () {
+  var m = this.magnitude;
+  if (m === 0) {
+    return this;
+  } else {
+    return this.scale(1 / m);
+  }
+};
+
+Object.defineProperty(proto, "magnitude", {
+  get: function () {
+    return Vector2.magnitude(this.x, this.y);
+  }
+});
+
 Object.defineProperty(proto, "angle", {
   get: function () {
     return Vector2.angle(this.x, this.y);
   }
 });
+
+Vector2.magnitude = function (x, y) {
+  return Math.sqrt(x * x + y * y);
+};
 
 Vector2.angle = function (x, y) {
   return Math.atan2(y, x);
