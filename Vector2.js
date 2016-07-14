@@ -1,12 +1,11 @@
-(function () {
 "use strict";
 
-var Vector2 = exports.ctor = function (x, y) {
+var exports = module.exports = function (x, y) {
   this.x = x;
   this.y = y;
 };
 
-var proto = Vector2.prototype;
+var proto = exports.prototype;
 
 proto.set = function (x, y) {
   this.x = x;
@@ -49,22 +48,20 @@ proto.normalize = function () {
 
 Object.defineProperty(proto, "magnitude", {
   get: function () {
-    return Vector2.magnitude(this.x, this.y);
+    return exports.magnitude(this.x, this.y);
   }
 });
 
 Object.defineProperty(proto, "angle", {
   get: function () {
-    return Vector2.angle(this.x, this.y);
+    return exports.angle(this.x, this.y);
   }
 });
 
-Vector2.magnitude = function (x, y) {
+exports.magnitude = function (x, y) {
   return Math.sqrt(x * x + y * y);
 };
 
-Vector2.angle = function (x, y) {
+exports.angle = function (x, y) {
   return Math.atan2(y, x);
 };
-
-})();

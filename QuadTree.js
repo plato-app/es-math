@@ -1,4 +1,3 @@
-(function () {
 "use strict";
 
 var PARENT = -1;
@@ -7,7 +6,7 @@ var UPPER_RIGHT = 1;
 var LOWER_LEFT = 2;
 var LOWER_RIGHT = 3;
 
-var QuadTree = exports.ctor = function (x, y, width, height, depth, depthLimit, rectLimit) {
+var exports = module.exports = function (x, y, width, height, depth, depthLimit, rectLimit) {
   this.x = x || 0;
   this.y = y || 0;
   this.width = width || 1;
@@ -19,7 +18,7 @@ var QuadTree = exports.ctor = function (x, y, width, height, depth, depthLimit, 
   this.rectangles = [];
 };
 
-var proto = QuadTree.prototype;
+var proto = exports.prototype;
 
 proto.clear = function () {
   var children = this.children;
@@ -81,10 +80,10 @@ proto._divide = function () {
   var height = Math.floor(this.height / 2);
   var depth = this.depth + 1;
 
-  children.push(new QuadTree(this.x, this.y, width, height, depth, this.depthLimit, this.rectLimit));
-  children.push(new QuadTree(this.x + width, this.y, width, height, depth, this.depthLimit, this.rectLimit));
-  children.push(new QuadTree(this.x, this.y + height, width, height, depth, this.depthLimit, this.rectLimit));
-  children.push(new QuadTree(this.x + width, this.y + height, width, height, depth, this.depthLimit, this.rectLimit));
+  children.push(new exports(this.x, this.y, width, height, depth, this.depthLimit, this.rectLimit));
+  children.push(new exports(this.x + width, this.y, width, height, depth, this.depthLimit, this.rectLimit));
+  children.push(new exports(this.x, this.y + height, width, height, depth, this.depthLimit, this.rectLimit));
+  children.push(new exports(this.x + width, this.y + height, width, height, depth, this.depthLimit, this.rectLimit));
 
   this.rectangles = [];
   for (var i = 0, j = rectangles.length; i < j; ++i) {
@@ -151,5 +150,3 @@ proto._getChildren = function (rect) {
 
   return found;
 };
-
-})();

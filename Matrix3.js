@@ -1,12 +1,11 @@
-(function () {
 "use strict";
 
-var Matrix3 = exports.ctor = function () {
+var exports = module.exports = function () {
   this.values = new Float32Array(9);
   this.set.apply(this, arguments);
 };
 
-var proto = Matrix3.prototype;
+var proto = exports.prototype;
 
 proto.set = function () {
   var v = this.values;
@@ -25,20 +24,20 @@ proto.identity = function () {
 };
 
 proto.clone = function () {
-  var mat3 = new Matrix3();
+  var mat3 = new exports();
   mat3.set.apply(mat3, this.values);
   return mat3;
 };
 
 proto.multiply = function (m) {
-  Matrix3.multiply(this, m, this);
+  exports.multiply(this, m, this);
   return this;
 };
 
-Matrix3.multiply = function (a, b, out) {
+exports.multiply = function (a, b, out) {
   var a = a.values;
   var b = b.values;
-  if (!out) { var out = new Matrix3(); }
+  if (!out) { var out = new exports(); }
   var a00 = a[0 * 3 + 0];
   var a01 = a[0 * 3 + 1];
   var a02 = a[0 * 3 + 2];
@@ -69,5 +68,3 @@ Matrix3.multiply = function (a, b, out) {
     a20 * b02 + a21 * b12 + a22 * b22
   );
 };
-
-})();

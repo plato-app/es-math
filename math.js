@@ -1,4 +1,3 @@
-(function () {
 "use strict";
 
 exports.approximately = function (a, b) {
@@ -21,5 +20,3 @@ exports.lerp = function (a, b, t, round) {
 exports.normalize = function (n, min, max) {
   return (n - min) / (max - min);
 };
-
-})();

@@ -1,24 +1,22 @@
-(function () {
 "use strict";
 
-var path = typeof plato !== "undefined" ? "./gamelibs/math/" : "./";
-var Matrix3 = require(path + "Matrix3.js");
+var Matrix3 = prequire("./Matrix3.js");
 
 // Temp matrix for translate, scale, rotate calculations
-var mat3 = new Matrix3.ctor();
+var mat3 = new Matrix3();
 
-var Transform = exports.ctor = function () {
-  Matrix3.ctor.call(this);
+var exports = module.exports = function () {
+  Matrix3.call(this);
   this.identity();
 };
 
-Transform.prototype = new Matrix3.ctor();
-Transform.prototype.constructor = Transform;
+exports.prototype = new Matrix3();
+exports.prototype.constructor = exports;
 
-var proto = Transform.prototype;
+var proto = exports.prototype;
 
 proto.clone = function () {
-  var transform = new Transform();
+  var transform = new exports();
   transform.set.apply(transform, this.values);
   return transform;
 };
@@ -29,7 +27,7 @@ proto.translate = function (tx, ty) {
     0, 1, 0,
     tx, ty, 1
   );
-  Matrix3.ctor.multiply(mat3, this, this);
+  Matrix3.multiply(mat3, this, this);
 };
 
 proto.scale = function (sx, sy) {
@@ -38,7 +36,7 @@ proto.scale = function (sx, sy) {
     0, sy, 0,
     0, 0, 1
   );
-  Matrix3.ctor.multiply(mat3, this, this);
+  Matrix3.multiply(mat3, this, this);
 };
 
 proto.rotate = function (radians) {
@@ -49,7 +47,5 @@ proto.rotate = function (radians) {
     -s, c, 0,
     0, 0, 1
   );
-  Matrix3.ctor.multiply(mat3, this, this);
+  Matrix3.multiply(mat3, this, this);
 };
-
-})();
