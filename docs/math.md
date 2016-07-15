@@ -1,46 +1,59 @@
-# math
+# `math` API Reference
 
-## API Reference
+A collection of math related utility functions.
 
-### Methods
+## Methods
 
+* [`approximately`](#approximately)
 * [`clamp`](#clamp)
 * [`distance`](#distance)
 * [`lerp`](#lerp)
 * [`normalize`](#normalize)
 
-#### `clamp`
+### `approximately (a, b)`
 
-Clamps a value (`n`) between `min` and `max`.
+Returns `true` if the difference between `a` and `b` is within `Number.EPSILON`. Useful for evaluating small numbers for equality.
 
+Example:
 ```js
-// Clamp 200 between 0 and 100
+var zero = math.approximately(0.0000001, 0);
+// zero = true
+```
+
+### `clamp (n, min, max)`
+
+Clamps `n` between `min` and `max`.
+
+Example:
+```js
 var n = math.clamp(200, 0, 100);
 // n = 100
 ```
 
-#### `distance`
+### `distance (x1, y1, x2, y2)`
 
-Returns the distance beteween two points.
+Returns the distance between two points.
 
+Example:
 ```js
 var n = math.distance(10, 10, 20, 20);
 ```
 
-#### `lerp`
+### `lerp (a, b, t, round)`
 
-Linear interpolation between `a` and `b`.
+Linear interpolation of `t` between `a` and `b`. Returns a rounded number when `round` is `true`.
 
+Example:
 ```js
-// Interpolate 0.5 between 50 and 100
 var n = math.lerp(50, 100, 0.5);
 // n = 75
 ```
 
-#### `normalize`
+### `normalize (n, min, max)`
 
-Normalizes a value between `0` and `1`. Reverse `lerp`.
+Returns the normalized value (between `0` and `1`) of `n` between `min` and `max`. Reverse `lerp`.
 
+Example:
 ```js
 var n = math.normalize(75, 50, 100);
 // n = 0.5
