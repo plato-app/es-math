@@ -1,5 +1,6 @@
 "use strict";
 
+var objects = prequire("util/objects.js");
 var Matrix3 = prequire("./Matrix3.js");
 
 // Temp matrix for translate, scale, rotate calculations
@@ -10,10 +11,7 @@ var exports = module.exports = function () {
   this.identity();
 };
 
-exports.prototype = new Matrix3();
-exports.prototype.constructor = exports;
-
-var proto = exports.prototype;
+var proto = objects.extend(exports, Matrix3);
 
 proto.clone = function () {
   var transform = new exports();
