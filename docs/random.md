@@ -6,7 +6,15 @@ The underlying algorithm is a [linear congruential generator](https://en.wikiped
 
 ## Methods
 
-### `chance (n)`
+* [chance](#chance)
+* [getSeed](#getseed)
+* [integer](#integer)
+* [normal](#normal)
+* [range](#range)
+* [seed](#seed)
+
+### chance
+`chance (n)`
 
 Returns `true` if a random normal is less than `n`, otherwise `false`.
 
@@ -16,7 +24,8 @@ var winner = random.chance(0.5);
 // winner = true
 ```
 
-### `getSeed`
+### getSeed
+`getSeed ()`
 
 Returns the current seed value.
 
@@ -26,7 +35,8 @@ var n = random.getSeed();
 // n = 1000
 ```
 
-### `integer (max)`
+### integer
+`integer (max)`
 
 Returns a random integer between `0` and `max`.
 
@@ -36,7 +46,8 @@ var n = random.integer(100);
 // n = 57
 ```
 
-### `normal`
+### normal
+`normal ()`
 
 Returns a random, normalized value (between `0` and `1`).
 
@@ -46,7 +57,8 @@ var n = random.normal();
 // n = 0.32
 ```
 
-### `range (min, max, round)`
+### range
+`range (min, max, round)`
 
 Returns a random value between `min` and `max`. If `round` is `true`, the return value is rounded.
 
@@ -56,9 +68,10 @@ var n = random.range(100, 200, true);
 // n = 179
 ```
 
-### `seed`
+### seed
+`seed (n)`
 
-Sets the current seed value.
+Sets the current seed value to `n`.
 
 Example:
 ```js
