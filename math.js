@@ -20,3 +20,7 @@ exports.lerp = function (a, b, t, round) {
 exports.normalize = function (n, min, max) {
   return (n - min) / (max - min);
 };
+
+exports.sign = function (n) {
+  return n > 0 ? 1 : n === 0 ? 0 : -1;
+};
