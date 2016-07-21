@@ -12,9 +12,9 @@ A collection of math related utility functions.
 * [sign](#sign)
 
 ### approximately
-`approximately (a, b)`
+`approximately (a, b, threshold)`
 
-Returns `true` if the difference between `a` and `b` is within `Number.EPSILON`. Useful for evaluating small numbers for equality.
+Returns `true` if the difference between `a` and `b` is within `threshold`. Useful for evaluating small numbers for equality. `threshold` defaults to `Number.EPSILON`.
 
 Example:
 ```js

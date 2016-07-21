@@ -1,7 +1,8 @@
 "use strict";
 
-exports.approximately = function (a, b) {
-  return Math.abs(a - b) < Number.EPSILON;
+exports.approximately = function (a, b, threshold) {
+  var t = threshold !== undefined ? threshold : Number.EPSILON;
+  return Math.abs(a - b) < t;
 };
 
 exports.clamp = function (n, min, max) {
