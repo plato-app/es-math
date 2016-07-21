@@ -13,6 +13,12 @@ proto.set = function (x, y) {
   return this;
 };
 
+proto.copy = function (v) {
+  this.x = v.x;
+  this.y = v.y;
+  return this;
+};
+
 proto.zero = function () {
   this.x = 0;
   this.y = 0;
@@ -44,6 +50,10 @@ proto.normalize = function () {
   } else {
     return this.scale(1 / m);
   }
+};
+
+proto.reflect = function (normal) {
+  return this.subtract(vec2.copy(normal).scale(2 * this.dot(normal)));
 };
 
 proto.dot = function (v) {
@@ -84,3 +94,7 @@ exports.angleBetween = function (x1, y1, x2, y2) {
   var m2 = exports.magnitude(x2, y2);
   return Math.acos(dot / (m1 * m2));
 };
+
+// Scratch Vector2 for inline calculations
+// Defined at the bottom so that all prototype methods are in place
+var vec2 = new exports();
