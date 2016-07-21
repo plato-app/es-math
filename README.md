@@ -10,4 +10,4 @@ A library of math-related utilities and classes.
 * [random](docs/random.md)
 * QuadTree
 * Transform
-* Vector2
+* [Vector2](docs/Vector2.md)
