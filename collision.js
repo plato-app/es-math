@@ -26,6 +26,15 @@ exports.testCircleRectangle = function (cx, cy, cr, rx, ry, rw, rh) {
   return exports.testPointCircle(x, y, cx, cy, cr);
 };
 
+exports.getIntersectionRect = function (a, b) {
+  return {
+    x: Math.max(a.x, b.x),
+    y: Math.max(a.y, b.y),
+    width: Math.min(a.x + a.width, b.x + b.width) - Math.max(a.x, b.x),
+    height: Math.min(a.y + a.height, b.y + b.height) - Math.max(a.y, b.y)
+  };
+};
+
 exports.getAABBsMTV = function (a, b) {
   var mtv = new Vector2(0, 0);
 
