@@ -31,6 +31,7 @@ var m = v.magnitude;
 
 * [add](#add)
 * [copy](#copy)
+* [distance](#distance)
 * [dot](#dot)
 * [normalize](#normalize)
 * [reflect](#reflect)
@@ -71,6 +72,19 @@ var v1 = new Vector2(5, 10);
 var v2 = new Vector2(2, 3);
 v1.copy(v2);
 // v1 = x: 2, y: 3
+```
+
+### distance
+`distance (v)`
+
+Returns the distance between this vector and `v`.
+
+Example:
+```js
+var v1 = new Vector2(5, 10);
+var v2 = new Vector2(2, 3);
+var n = v1.distance(v2);
+// n = 7.615773106
 ```
 
 ### dot

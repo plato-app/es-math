@@ -1,8 +1,8 @@
 "use strict";
 
 var exports = module.exports = function (x, y) {
-  this.x = x;
-  this.y = y;
+  this.x = x !== undefined ? x : 0;
+  this.y = y !== undefined ? y : 0;
 };
 
 var proto = exports.prototype;
@@ -56,6 +56,10 @@ proto.reflect = function (normal) {
   return this.subtract(vec2.copy(normal).scale(2 * this.dot(normal)));
 };
 
+proto.distance = function (v) {
+  return exports.distance(this.x, this.y, v.x, v.y);
+};
+
 proto.dot = function (v) {
   return exports.dot(this.x, this.y, v.x, v.y);
 };
@@ -82,6 +86,10 @@ exports.magnitude = function (x, y) {
 
 exports.angle = function (x, y) {
   return Math.atan2(y, x);
+};
+
+exports.distance = function (x1, y1, x2, y2) {
+  return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 };
 
 exports.dot = function (x1, y1, x2, y2) {
