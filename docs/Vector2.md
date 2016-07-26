@@ -113,6 +113,19 @@ v1.reflect(v2);
 // v1 = x: 5, y: -5
 ```
 
+### subtract
+`subtract (v)`
+
+Subtracts a vector, `v`, from this vector.
+
+Example:
+```js
+var v1 = new Vector(5, 5);
+var v2 = new Vector(2, 3);
+v1.subtract(v2);
+// v1 = x: 3, y: 2
+```
+
 ### zero
 `zero ()`
 
