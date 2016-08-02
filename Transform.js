@@ -38,8 +38,8 @@ proto.scale = function (sx, sy) {
 };
 
 proto.rotate = function (radians) {
-  var s = Math.sin(radians);
-  var c = Math.cos(radians);
+  var s = pmath.sin(radians);
+  var c = pmath.cos(radians);
   mat3.set(
     c, s, 0,
     -s, c, 0,

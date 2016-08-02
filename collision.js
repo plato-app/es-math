@@ -13,7 +13,7 @@ exports.testAABBs = function (x1, y1, w1, h1, x2, y2, w2, h2) {
 };
 
 exports.testPointCircle = function (x1, y1, x2, y2, r2) {
-  return Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2) < Math.pow(r2, 2);
+  return pmath.pow(x1 - x2, 2) + pmath.pow(y1 - y2, 2) < pmath.pow(r2, 2);
 };
 
 exports.testPointRect = function (x1, y1, x2, y2, w2, h2) {

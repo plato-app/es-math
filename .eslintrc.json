@@ -24,6 +24,7 @@
     "no-redeclare": "warn"
   },
   "globals": {
+    "pmath": false,
     "plato": false,
     "prequire": false
   }

@@ -10,7 +10,7 @@ exports.clamp = function (n, min, max) {
 };
 
 exports.distance = function (x1, y1, x2, y2) {
-  return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+  return Math.sqrt(pmath.pow(x2 - x1, 2) + pmath.pow(y2 - y1, 2));
 };
 
 exports.lerp = function (a, b, t, round) {
