@@ -9,6 +9,7 @@ A collection of math related utility functions.
 * [distance](#distance)
 * [lerp](#lerp)
 * [normalize](#normalize)
+* [round](#round)
 * [sign](#sign)
 
 ### approximately
@@ -63,6 +64,17 @@ Example:
 ```js
 var n = math.normalize(75, 50, 100);
 // n = 0.5
+```
+
+### round
+`round (n, decimals)`
+
+Returns `n` rounded to `decimals` number of decimal points.
+
+Example:
+```js
+var n = math.round(3.14159265359, 2);
+// n = 3.14
 ```
 
 ### sign

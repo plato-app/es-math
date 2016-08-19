@@ -22,6 +22,11 @@ exports.normalize = function (n, min, max) {
   return (n - min) / (max - min);
 };
 
+exports.round = function (value, decimals) {
+  var mod = pmath.pow(10, decimals);
+  return Math.round(value * mod) / mod;
+};
+
 exports.sign = function (n) {
   return n > 0 ? 1 : n === 0 ? 0 : -1;
 };
