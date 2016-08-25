@@ -9,6 +9,14 @@ var convex = function (x1, y1, x2, y2, x3, y3) {
   return (y1 - y2) * (x3 - x2) + (x2 - x1) * (y3 - y2) >= 0;
 };
 
+exports.flatten = function (poly) {
+  let flat = [];
+  for (let i = 0; i < poly.length; ++i) {
+    flat.push(poly[i][0], poly[i][1]);
+  }
+  return flat;
+};
+
 exports.triangulate = function (poly) {
   var n = poly.length >> 1;
   if (n < 3) { return []; }
