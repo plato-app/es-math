@@ -1,5 +1,7 @@
 "use strict";
 
+exports.TAU = Math.PI * 2;
+
 exports.approximately = function (a, b, threshold) {
   var t = threshold !== undefined ? threshold : Number.EPSILON;
   return Math.abs(a - b) < t;
