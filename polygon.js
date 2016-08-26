@@ -3,10 +3,22 @@
 // adapted from PolyK: http://polyk.ivank.net/
 // MIT License, Copyright (c) 2012 - 2014 Ivan Kuckir
 
+var math = prequire("math/math.js");
 var collision = prequire("math/collision.js");
 
 var convex = function (x1, y1, x2, y2, x3, y3) {
   return (y1 - y2) * (x3 - x2) + (x2 - x1) * (y3 - y2) >= 0;
+};
+
+exports.createCircle = function (x, y, radius, sides) {
+  let circle = [];
+  let step = math.TAU / (sides || 12);
+  for (let angle = 0; angle < math.TAU; angle += step) {
+    let rx = pmath.cos(angle) * radius;
+    let ry = pmath.sin(angle) * radius;
+    circle.push([x + rx, y + ry]);
+  }
+  return circle;
 };
 
 exports.flatten = function (poly) {
