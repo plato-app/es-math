@@ -3,6 +3,8 @@
 var math = prequire("math/math.js");
 var earcut = prequire("earcut");
 
+const TERRAIN_VERTEX_EPSILON = 0.00001;
+
 exports.createCircle = function (x, y, radius, sides) {
   let circle = [];
   let step = math.TAU / (sides || 12);
@@ -20,6 +22,20 @@ exports.flatten = function (poly) {
     flat.push(poly[i][0], poly[i][1]);
   }
   return flat;
+};
+
+exports.dedupeVertices = function (poly) {
+  for (let i = poly.length - 1; i >= 0; --i) {
+    let p1 = poly[i];
+    let p2 = i === 0 ? poly[poly.length - 1] : poly[i - 1];
+    if (
+      math.approximately(p1[0], p2[0], TERRAIN_VERTEX_EPSILON) &&
+      math.approximately(p1[1], p2[1], TERRAIN_VERTEX_EPSILON)
+    ) {
+      plato.log("polygon.dedupeVertices: Removing dupe vertex: " + i);
+      poly.splice(i, 1);
+    }
+  }
 };
 
 exports.triangulate = function (poly) {
