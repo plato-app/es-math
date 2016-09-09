@@ -3,7 +3,7 @@
 var math = prequire("math/math.js");
 var earcut = prequire("earcut");
 
-const TERRAIN_VERTEX_EPSILON = 0.00001;
+const DUPE_VERTEX_EPSILON = 0.00001;
 
 exports.createCircle = function (x, y, radius, sides) {
   let circle = [];
@@ -29,8 +29,8 @@ exports.dedupeVertices = function (poly) {
     let p1 = poly[i];
     let p2 = i === 0 ? poly[poly.length - 1] : poly[i - 1];
     if (
-      math.approximately(p1[0], p2[0], TERRAIN_VERTEX_EPSILON) &&
-      math.approximately(p1[1], p2[1], TERRAIN_VERTEX_EPSILON)
+      math.approximately(p1[0], p2[0], DUPE_VERTEX_EPSILON) &&
+      math.approximately(p1[1], p2[1], DUPE_VERTEX_EPSILON)
     ) {
       plato.log("polygon.dedupeVertices: Removing dupe vertex: " + i);
       poly.splice(i, 1);
