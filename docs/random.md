@@ -7,6 +7,7 @@ The underlying algorithm is a [linear congruential generator](https://en.wikiped
 ## Methods
 
 * [chance](#chance)
+* [choice](#choice)
 * [getSeed](#getseed)
 * [integer](#integer)
 * [normal](#normal)
@@ -22,6 +23,17 @@ Example:
 ```js
 var winner = random.chance(0.5);
 // winner = true
+```
+
+### choice
+`choice (options)`
+
+Returns a randomly selected item from `options`.
+
+Example:
+```js
+let pick = random.choice(["apple", "banana", "orange"]);
+// pick = "banana"
 ```
 
 ### getSeed

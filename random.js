@@ -39,3 +39,8 @@ exports.range = function (min, max, round) {
 exports.chance = function (chance) {
   return next() < chance;
 };
+
+exports.choice = function (options) {
+  let index = exports.integer(options.length - 1);
+  return options[index];
+};
