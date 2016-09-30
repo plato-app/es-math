@@ -56,6 +56,14 @@ proto.reflect = function (normal) {
   return this.subtract(vec2.copy(normal).scale(2 * this.dot(normal)));
 };
 
+proto.rotate = function (radians) {
+  let cos = pmath.cos(radians);
+  let sin = pmath.sin(radians);
+  return this.set(
+    this.x * cos - this.y * sin,
+    this.x * sin + this.y * cos);
+};
+
 proto.distance = function (v) {
   return exports.distance(this.x, this.y, v.x, v.y);
 };

@@ -35,6 +35,7 @@ var m = v.magnitude;
 * [dot](#dot)
 * [normalize](#normalize)
 * [reflect](#reflect)
+* [rotate](#rotate)
 * [set](#set)
 * [scale](#scale)
 * [subtract](#subtract)
@@ -111,6 +112,18 @@ var v1 = new Vector2(5, 5);
 var v2 = new Vector2(0, -1);
 v1.reflect(v2);
 // v1 = x: 5, y: -5
+```
+
+### rotate
+`rotate (radians)`
+
+Rotates this vector *clockwise* by `radians`.
+
+Example:
+```js
+let v1 = new Vector2(0, 1);
+v1.rotate(Math.PI / 2); // 45 degrees
+// v1 = x: -1, y: 0
 ```
 
 ### subtract
