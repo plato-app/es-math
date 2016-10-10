@@ -44,3 +44,14 @@ exports.choice = function (options) {
   let index = exports.integer(options.length - 1);
   return options[index];
 };
+
+exports.shuffle = function (items) {
+  let len = items.length;
+  if (len < 2) { return; }
+  for (let i = 0; i < len; ++i) {
+    let j = exports.range(i, len - 1);
+    let swap = items[i];
+    items[i] = items[j];
+    items[j] = swap;
+  }
+};

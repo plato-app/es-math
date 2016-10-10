@@ -13,6 +13,7 @@ The underlying algorithm is a [linear congruential generator](https://en.wikiped
 * [normal](#normal)
 * [range](#range)
 * [seed](#seed)
+* [shuffle](#shuffle)
 
 ### chance
 `chance (n)`
@@ -88,4 +89,16 @@ Sets the current seed value to `n`.
 Example:
 ```js
 random.seed(1000);
+```
+
+### shuffle
+`shuffle (items)`
+
+Shuffles the contents of an array, `items`, using the [Fisher-Yates algorithm](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle).
+
+Example:
+```js
+let fruit = ["apple", "banana", "pear"];
+random.shuffle(fruit);
+// fruit = ["banana", "pear", "apple"]
 ```
