@@ -84,7 +84,7 @@ var n = random.range(100, 200, true);
 ### seed
 `seed (n)`
 
-Sets the current seed value to `n`.
+Sets the current seed value to `n`. When `n` is `NaN`, the seed is randomized.
 
 Example:
 ```js

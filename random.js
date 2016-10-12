@@ -3,20 +3,31 @@
 // https://en.wikipedia.org/wiki/Linear_congruential_generator
 
 // Same parameters used by glibc
-var m = 0x80000000; // modulus, 2^31
-var a = 1103515245; // multiplier
-var c = 12345; // increment
+const M = 0x80000000; // modulus, 2^31
+const A = 1103515245; // multiplier
+const C = 12345; // increment
 
-// Randomize initial seed
-var state = Math.floor(Math.random() * (m - 1));
+// Current state
+let state = 0;
 
-var next = function () {
-  state = (a * state + c) % m;
-  return state / m;
+// Randomizes the current state
+let randomize = function () {
+  state = Math.floor(Math.random() * (M - 1));
+};
+
+// Increments state and returns normalized value
+let next = function () {
+  state = (A * state + C) % M;
+  return state / M;
 };
 
 exports.seed = function (value) {
-  state = value;
+  if (isNaN(value)) {
+    randomize();
+  } else {
+    state = value;
+  }
+  return state;
 };
 
 exports.getSeed = function () {
@@ -55,3 +66,6 @@ exports.shuffle = function (items) {
     items[j] = swap;
   }
 };
+
+// Randomize initial seed
+exports.seed();
