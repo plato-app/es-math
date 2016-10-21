@@ -57,8 +57,8 @@ proto.reflect = function (normal) {
 };
 
 proto.rotate = function (radians) {
-  let cos = pmath.cos(radians);
-  let sin = pmath.sin(radians);
+  var cos = pmath.cos(radians);
+  var sin = pmath.sin(radians);
   return this.set(
     this.x * cos - this.y * sin,
     this.x * sin + this.y * cos);
