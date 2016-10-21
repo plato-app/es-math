@@ -121,7 +121,7 @@ Rotates this vector *clockwise* by `radians`.
 
 Example:
 ```js
-let v1 = new Vector2(0, 1);
+var v1 = new Vector2(0, 1);
 v1.rotate(Math.PI / 2); // 45 degrees
 // v1 = x: -1, y: 0
 ```

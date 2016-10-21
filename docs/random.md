@@ -33,7 +33,7 @@ Returns a randomly selected item from `options`.
 
 Example:
 ```js
-let pick = random.choice(["apple", "banana", "orange"]);
+var pick = random.choice(["apple", "banana", "orange"]);
 // pick = "banana"
 ```
 
@@ -98,7 +98,7 @@ Shuffles the contents of an array, `items`, using the [Fisher-Yates algorithm](h
 
 Example:
 ```js
-let fruit = ["apple", "banana", "pear"];
+var fruit = ["apple", "banana", "pear"];
 random.shuffle(fruit);
 // fruit = ["banana", "pear", "apple"]
 ```
