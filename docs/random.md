@@ -2,7 +2,7 @@
 
 A seeded, pseudo-random number generator. Each unique seed value will return the same sequence of "random" numbers. Starting seed value is randomized using `Math.random`.
 
-The underlying algorithm is a [linear congruential generator](https://en.wikipedia.org/wiki/Linear_congruential_generator) which uses the same paramters as [glibc](https://en.wikipedia.org/wiki/Glibc).
+The underlying algorithm is a [linear congruential generator](https://en.wikipedia.org/wiki/Linear_congruential_generator) which uses the same parameters as [glibc](https://en.wikipedia.org/wiki/Glibc).
 
 ## Methods
 
