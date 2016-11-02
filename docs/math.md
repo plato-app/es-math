@@ -7,10 +7,13 @@ A collection of math related utility functions.
 * [approximately](#approximately)
 * [clamp](#clamp)
 * [distance](#distance)
+* [indexToX](#indexToX)
+* [indexToY](#indexToY)
 * [lerp](#lerp)
 * [normalize](#normalize)
 * [round](#round)
 * [sign](#sign)
+* [xyToIndex](#xyToIndex)
 
 ### approximately
 `approximately (a, b, threshold)`
@@ -42,6 +45,28 @@ Returns the distance between two points.
 Example:
 ```js
 var n = math.distance(10, 10, 20, 20);
+```
+
+### indexToX
+`indexToX (index, width)`
+
+Returns the X grid coordinate for a flattened `index`.
+
+Example:
+```js
+var x = math.indexToX(35, 20);
+// x = 15
+```
+
+### indexToY
+`indexToY (index, width)`
+
+Returns the Y grid coordinate for a flattened `index`.
+
+Example:
+```js
+var y = math.indexToX(35, 20);
+// y = 1
 ```
 
 ### lerp
@@ -86,4 +111,15 @@ Example:
 ```js
 var n = math.sign(-45);
 // n = -1
+```
+
+### xyToIndex
+`xyToIndex (x, y, width)`
+
+Flattens grid (`x`, `y`) coordinates into an index.
+
+Example:
+```js
+var index = math.xyToIndex(10, 3, 20);
+// index = 70
 ```
