@@ -1,5 +1,13 @@
 "use strict";
 
+var tmpMat3 = null;
+var getTempMat3 = function () {
+  if (!tmpMat3) {
+    tmpMat3 = new exports();
+  }
+  return tmpMat3.identity();
+};
+
 var exports = module.exports = function () {
   this.values = new Float32Array(9);
   this.set.apply(this, arguments);
@@ -16,11 +24,7 @@ proto.set = function () {
 };
 
 proto.identity = function () {
-  return this.set(
-    1, 0, 0,
-    0, 1, 0,
-    0, 0, 1
-  );
+  return this.set(1, 0, 0, 0, 1, 0, 0, 0, 1);
 };
 
 proto.clone = function () {
@@ -29,42 +33,74 @@ proto.clone = function () {
   return mat3;
 };
 
+proto.translate = function (x, y) {
+  var m = this.values;
+  var a = m[0];
+  var b = m[1];
+  var c = m[3];
+  var d = m[4];
+  var tx = m[2];
+  var ty = m[5];
+  m[2] = a * x + b * y + tx;
+  m[5] = c * x + d * y + ty;
+  return this;
+};
+
+proto.scale = function (sx, sy) {
+  var m = this.values;
+  m[0] *= sx;
+  m[1] *= sy;
+  m[3] *= sx;
+  m[4] *= sy;
+  return this;
+};
+
+proto.rotate = function (radians) {
+  var s = pmath.sin(radians);
+  var c = pmath.cos(radians);
+  var m = getTempMat3();
+  m.set(c, -s, 0, s, c, 0, 0, 0, 1);
+  exports.multiply(this, m, this);
+};
+
 proto.multiply = function (m) {
   exports.multiply(this, m, this);
   return this;
 };
 
-exports.multiply = function (a, b, out) {
-  var a = a.values;
-  var b = b.values;
-  if (!out) { var out = new exports(); }
-  var a00 = a[0 * 3 + 0];
-  var a01 = a[0 * 3 + 1];
-  var a02 = a[0 * 3 + 2];
-  var a10 = a[1 * 3 + 0];
-  var a11 = a[1 * 3 + 1];
-  var a12 = a[1 * 3 + 2];
-  var a20 = a[2 * 3 + 0];
-  var a21 = a[2 * 3 + 1];
-  var a22 = a[2 * 3 + 2];
-  var b00 = b[0 * 3 + 0];
-  var b01 = b[0 * 3 + 1];
-  var b02 = b[0 * 3 + 2];
-  var b10 = b[1 * 3 + 0];
-  var b11 = b[1 * 3 + 1];
-  var b12 = b[1 * 3 + 2];
-  var b20 = b[2 * 3 + 0];
-  var b21 = b[2 * 3 + 1];
-  var b22 = b[2 * 3 + 2];
-  out.set(
-    a00 * b00 + a01 * b10 + a02 * b20,
-    a00 * b01 + a01 * b11 + a02 * b21,
-    a00 * b02 + a01 * b12 + a02 * b22,
-    a10 * b00 + a11 * b10 + a12 * b20,
-    a10 * b01 + a11 * b11 + a12 * b21,
-    a10 * b02 + a11 * b12 + a12 * b22,
-    a20 * b00 + a21 * b10 + a22 * b20,
-    a20 * b01 + a21 * b11 + a22 * b21,
-    a20 * b02 + a21 * b12 + a22 * b22
-  );
+proto.transformPoint = function (point) {
+  var m = this.values;
+  var x = point.x;
+  var y = point.y;
+  point.x = x * m[0] + y * m[1] + m[2];
+  point.y = x * m[3] + y * m[4] + m[5];
+};
+
+exports.multiply = function (matA, matB, out) {
+  var a = matA.values;
+  var b = matB.values;
+  var o = out.values;
+
+  var a0 = a[0];
+  var a1 = a[1];
+  var a2 = a[2];
+  var a3 = a[3];
+  var a4 = a[4];
+  var a5 = a[5];
+  var b0 = b[0];
+  var b1 = b[1];
+  var b2 = b[2];
+  var b3 = b[3];
+  var b4 = b[4];
+  var b5 = b[5];
+
+  o[0] = a0 * b0 + a1 * b3;
+  o[1] = a0 * b1 + a1 * b4;
+  o[2] = a0 * b2 + a1 * b5 + a2;
+  o[3] = a3 * b0 + a4 * b3;
+  o[4] = a3 * b1 + a4 * b4;
+  o[5] = a3 * b2 + a4 * b5 + a5;
+  o[6] = 0;
+  o[7] = 0;
+  o[8] = 1;
 };
