@@ -45,6 +45,7 @@ Returns the distance between two points.
 Example:
 ```js
 var n = math.distance(10, 10, 20, 20);
+// n = 14.142135623730951
 ```
 
 ### indexToX
