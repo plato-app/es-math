@@ -1,6 +1,9 @@
 var tape = require("tape");
 var math = require("../lib/");
 
+// Stub out PAPI
+global.pmath = require("./pmath");
+
 tape("TAU", function (test) {
   test.plan(1);
   test.equal(math.TAU, Math.PI * 2);
@@ -17,6 +20,11 @@ tape("clamp", function (test) {
   test.equal(math.clamp(50, 0, 100), 50);
   test.equal(math.clamp(-50, 0, 100), 0);
   test.equal(math.clamp(200, 0, 100), 100);
+});
+
+tape("distance", function (test) {
+  test.plan(1);
+  test.equal(math.distance(10, 10, 20, 20), 14.142135623730951);
 });
 
 tape("lerp", function (test) {
