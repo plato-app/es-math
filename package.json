@@ -1,0 +1,12 @@
+{
+  "name": "math",
+  "version": "1.0.0",
+  "private": true,
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "node tests/index.js"
+  },
+  "devDependencies": {
+    "tape": "^4.6.2"
+  }
+}
