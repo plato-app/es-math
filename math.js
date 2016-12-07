@@ -28,6 +28,10 @@ exports.lerp = function (a, b, t, round) {
   return round ? Math.round(v) : v;
 };
 
+exports.mid = function (a, b) {
+  return Math.round((a + b) / 2);
+};
+
 exports.normalize = function (n, min, max) {
   return (n - min) / (max - min);
 };
