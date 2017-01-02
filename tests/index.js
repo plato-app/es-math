@@ -1,8 +1,6 @@
+require("papi-test-stubs");
 var tape = require("tape");
 var math = require("../lib/");
-
-// Stub out PAPI
-global.pmath = require("./pmath");
 
 tape("TAU", function (test) {
   test.plan(1);
