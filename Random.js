@@ -1,6 +1,6 @@
 /**
  * A seeded, pseudo-random number generator
- * @module math/Random
+ * @module Random
  * @copyright Plato Team, Inc. 2016
  * @author Geoff Blair <geoff@platoteam.com>
  */
@@ -12,11 +12,6 @@ var M = 0x80000000; // modulus, 2^31
 var A = 1103515245; // multiplier
 var C = 12345; // increment
 
-/**
- * Constructs a new PRNG object
- * @class
- * @constructor
- */
 var exports = module.exports = function () {
   this._state = 0;
   this._randomizeSeed();
@@ -27,6 +22,7 @@ var proto = exports.prototype;
 /**
  * Randomizes this PRNG's state value
  * @function _randomizeSeed
+ * @alias module:Random._randomizeSeed
  * @protected
  */
 proto._randomizeSeed = function () {
