@@ -13,6 +13,7 @@ var A = 1103515245; // multiplier
 var C = 12345; // increment
 
 /**
+ * Random constructor
  * @class
  * @alias module:Random
  * @constructor

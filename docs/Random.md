@@ -8,6 +8,7 @@ A seeded, pseudo-random number generator
 
 * [Random](#module_Random)
     * [Random](#exp_module_Random--Random) ⏏
+        * [new Random()](#new_module_Random--Random_new)
         * [.seed](#module_Random--Random+seed) : <code>number</code>
         * [.normal()](#module_Random--Random+normal) ⇒ <code>number</code>
         * [.integer(max)](#module_Random--Random+integer) ⇒ <code>number</code>
@@ -20,6 +21,11 @@ A seeded, pseudo-random number generator
 
 ### Random ⏏
 **Kind**: Exported class  
+<a name="new_module_Random--Random_new"></a>
+
+#### new Random()
+Random constructor
+
 <a name="module_Random--Random+seed"></a>
 
 #### random.seed : <code>number</code>
