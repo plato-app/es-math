@@ -12,36 +12,38 @@ var M = 0x80000000; // modulus, 2^31
 var A = 1103515245; // multiplier
 var C = 12345; // increment
 
-var exports = module.exports = function () {
+/**
+ * @class
+ * @alias module:Random
+ * @constructor
+ */
+var Random = function () {
   this._state = 0;
   this._randomizeSeed();
 };
 
-var proto = exports.prototype;
+module.exports = Random;
+var proto = module.exports.prototype;
 
 /**
- * Randomizes this PRNG's state value
- * @function _randomizeSeed
- * @alias module:Random._randomizeSeed
- * @protected
+ * Seed value
+ * @name seed
+ * @type {number}
+ * @instance
  */
-proto._randomizeSeed = function () {
-  this._state = Math.floor(Math.random() * (M - 1));
-};
+Object.defineProperty(proto, "seed", {
+  get: function () {
+    return this._state;
+  },
+  set: function (value) {
+    this._state = value;
+  }
+});
 
 /**
- * Returns the next psuedo-random value
- * @function _next
- * @protected
- */
-proto._next = function () {
-  this._state = (A * this._state + C) % M;
-  return this._state / M;
-};
-
-/**
- * Returns a normalized random value, i.e. between 0 and 1,
- * @function normal
+ * Returns a normalized random value, i.e. between 0 and 1
+ * @method normal
+ * @instance
  * @public
  * @returns {number} Normalized random value
  */
@@ -51,7 +53,8 @@ proto.normal = function () {
 
 /**
  * Returns a random integer value between 0 and max (inclusive)
- * @function integer
+ * @method integer
+ * @instance
  * @public
  * @param {number} max Maximum integer value
  * @returns {number} Random integer
@@ -62,7 +65,8 @@ proto.integer = function (max) {
 
 /**
  * Returns a random value between min and max, optionally rounded
- * @function range
+ * @method range
+ * @instance
  * @public
  * @param {number} min Minimum value
  * @param {number} max Maximum value
@@ -76,7 +80,8 @@ proto.range = function (min, max, round) {
 
 /**
  * Returns true if a randomized normal is within a percentage chance
- * @function chance
+ * @method chance
+ * @instance
  * @public
  * @param {number} chance Percentage chance in decimal form, e.g. 0.3 = 30% chance
  * @returns {boolean}
@@ -87,7 +92,8 @@ proto.chance = function (chance) {
 
 /**
  * Returns a random pick from an array of options
- * @function choice
+ * @method choice
+ * @instance
  * @public
  * @param {Array} options Array of options to choose from
  * @returns {any} Chosen item
@@ -99,10 +105,10 @@ proto.choice = function (options) {
 
 /**
  * Shuffles an array in-place using Fisher-Yates algorithm
- * @function shuffle
+ * @method shuffle
+ * @instance
  * @public
  * @param {Array} items Array of items to shuffle
- * @returns {void}
  */
 proto.shuffle = function (items) {
   var len = items.length;
@@ -115,11 +121,24 @@ proto.shuffle = function (items) {
   }
 };
 
-Object.defineProperty(proto, "seed", {
-  get: function () {
-    return this._state;
-  },
-  set: function (value) {
-    this._state = value;
-  }
-});
+/**
+ * Returns the next psuedo-random value
+ * @method _next
+ * @instance
+ * @private
+ * @returns {number} Next state
+ */
+proto._next = function () {
+  this._state = (A * this._state + C) % M;
+  return this._state / M;
+};
+
+/**
+ * Randomizes this PRNG's state value
+ * @method _randomizeSeed
+ * @instance
+ * @private
+ */
+proto._randomizeSeed = function () {
+  this._state = Math.floor(Math.random() * (M - 1));
+};
