@@ -19,8 +19,8 @@ var C = 12345; // increment
  * @constructor
  */
 var Random = function () {
-  this._state = 0;
-  this._randomizeSeed();
+	this._state = 0;
+	this._randomizeSeed();
 };
 
 module.exports = Random;
@@ -33,12 +33,12 @@ var proto = module.exports.prototype;
  * @instance
  */
 Object.defineProperty(proto, "seed", {
-  get: function () {
-    return this._state;
-  },
-  set: function (value) {
-    this._state = value;
-  }
+	get: function () {
+		return this._state;
+	},
+	set: function (value) {
+		this._state = value;
+	}
 });
 
 /**
@@ -49,7 +49,7 @@ Object.defineProperty(proto, "seed", {
  * @returns {number} Normalized random value
  */
 proto.normal = function () {
-  return this._next();
+	return this._next();
 };
 
 /**
@@ -61,7 +61,7 @@ proto.normal = function () {
  * @returns {number} Random integer
  */
 proto.integer = function (max) {
-  return Math.round(this._next() * max);
+	return Math.round(this._next() * max);
 };
 
 /**
@@ -75,8 +75,8 @@ proto.integer = function (max) {
  * @returns {number} Random value
  */
 proto.range = function (min, max, round) {
-  var value = Math.round(this._next() * (max - min) + min);
-  return round ? Math.round(value) : value;
+	var value = Math.round(this._next() * (max - min) + min);
+	return round ? Math.round(value) : value;
 };
 
 /**
@@ -88,7 +88,7 @@ proto.range = function (min, max, round) {
  * @returns {boolean}
  */
 proto.chance = function (chance) {
-  return this._next() < chance;
+	return this._next() < chance;
 };
 
 /**
@@ -100,8 +100,8 @@ proto.chance = function (chance) {
  * @returns {any} Chosen item
  */
 proto.choice = function (options) {
-  var index = this.integer(options.length - 1);
-  return options[index];
+	var index = this.integer(options.length - 1);
+	return options[index];
 };
 
 /**
@@ -112,14 +112,14 @@ proto.choice = function (options) {
  * @param {Array} items Array of items to shuffle
  */
 proto.shuffle = function (items) {
-  var len = items.length;
-  if (len < 2) { return; }
-  for (var i = 0; i < len; ++i) {
-    var j = this.range(i, len - 1);
-    var swap = items[i];
-    items[i] = items[j];
-    items[j] = swap;
-  }
+	var len = items.length;
+	if (len < 2) { return; }
+	for (var i = 0; i < len; ++i) {
+		var j = this.range(i, len - 1);
+		var swap = items[i];
+		items[i] = items[j];
+		items[j] = swap;
+	}
 };
 
 /**
@@ -130,8 +130,8 @@ proto.shuffle = function (items) {
  * @returns {number} Next state
  */
 proto._next = function () {
-  this._state = (A * this._state + C) % M;
-  return this._state / M;
+	this._state = (A * this._state + C) % M;
+	return this._state / M;
 };
 
 /**
@@ -141,5 +141,5 @@ proto._next = function () {
  * @private
  */
 proto._randomizeSeed = function () {
-  this._state = Math.floor(Math.random() * (M - 1));
+	this._state = Math.floor(Math.random() * (M - 1));
 };
