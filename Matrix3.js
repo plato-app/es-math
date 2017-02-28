@@ -76,6 +76,19 @@ proto.transformPoint = function (point) {
 	point.y = x * m[3] + y * m[4] + m[5];
 };
 
+/**
+ * Does an inverse transform on a 2D point (like converting world coords to local space)
+ * @param {{x:number, y:number}} point
+ */
+proto.inverseTransformPoint = function(point) {
+	var m = this.values;
+	var id = 1 / (m[0] * m[4] - m[3] * m[1]);
+	var x = point.x;
+	var y = point.y;
+	point.x = m[4] * id * x + -m[1] * id * y + (m[5] * m[1] - m[2] * m[4]) * id;
+	point.y = m[0] * id * y + -m[3] * id * x + (-m[5] * m[0] + m[2] * m[3]) * id;
+};
+
 exports.multiply = function (matA, matB, out) {
 	var a = matA.values;
 	var b = matB.values;
