@@ -1,6 +1,9 @@
 var tape = require("tape");
 var math = require("../index");
 
+// Testing stubs
+global.pmath = require("./stubs/pmath");
+
 tape("TAU", (t) => {
 	t.plan(1);
 	t.equal(math.TAU, Math.PI * 2);
@@ -17,6 +20,12 @@ tape("clamp", (t) => {
 	t.equal(math.clamp(25, 50, 100), 50);
 	t.equal(math.clamp(125, 50, 100), 100);
 	t.equal(math.clamp(75, 50, 100), 75);
+});
+
+tape("distance", (t) => {
+	t.plan(1);
+	// 1.4142135623730951
+	t.equal(math.distance(0, 0, 1, 1), 2);
 });
 
 tape("sign", (t) => {
