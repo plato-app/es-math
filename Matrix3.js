@@ -25,6 +25,8 @@ var Matrix3 = function () {
 	this.set.apply(this, arguments);
 };
 
+module.exports = Matrix3;
+
 /**
  * Set the values of this matrix
  * @param {...number} args Matrix values
@@ -116,7 +118,7 @@ Matrix3.prototype.rotate = function (radians) {
  * @chainable
  */
 Matrix3.prototype.multiply = function (m) {
-	exports.multiply(this, m, this);
+	Matrix3.multiply(this, m, this);
 	return this;
 };
 
