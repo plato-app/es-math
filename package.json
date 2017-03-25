@@ -1,0 +1,16 @@
+{
+  "name": "math",
+  "version": "1.2.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "eslintConfig": {
+    "extends": "plato"
+  },
+  "devDependencies": {
+    "eslint": "^3.18.0",
+    "eslint-config-plato": "git+ssh://git@git.playchat.net:playchat/eslint-config-plato.git#1.0.1"
+  }
+}
