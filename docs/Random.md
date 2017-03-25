@@ -15,7 +15,7 @@ A seeded, pseudo-random number generator
         * [.range(min, max, round)](#module_Random--Random+range) ⇒ <code>number</code>
         * [.chance(chance)](#module_Random--Random+chance) ⇒ <code>boolean</code>
         * [.choice(options)](#module_Random--Random+choice) ⇒ <code>any</code>
-        * [.shuffle(items)](#module_Random--Random+shuffle)
+        * [.shuffle(items)](#module_Random--Random+shuffle) ⇒ <code>undefined</code>
 
 <a name="exp_module_Random--Random"></a>
 
@@ -74,6 +74,7 @@ Returns a random value between min and max, optionally rounded
 Returns true if a randomized normal is within a percentage chance
 
 **Kind**: instance method of <code>[Random](#exp_module_Random--Random)</code>  
+**Returns**: <code>boolean</code> - Whether chance succeeded or not  
 **Access:** public  
 
 | Param | Type | Description |
@@ -95,7 +96,7 @@ Returns a random pick from an array of options
 
 <a name="module_Random--Random+shuffle"></a>
 
-#### random.shuffle(items)
+#### random.shuffle(items) ⇒ <code>undefined</code>
 Shuffles an array in-place using Fisher-Yates algorithm
 
 **Kind**: instance method of <code>[Random](#exp_module_Random--Random)</code>  

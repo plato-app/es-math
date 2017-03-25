@@ -8,7 +8,7 @@ Math utilities
 
 * [math](#module_math)
     * [.TAU](#module_math.TAU) : <code>number</code>
-    * [.approximately(a, b, threshold)](#module_math.approximately) ⇒ <code>number</code>
+    * [.approximately(a, b, threshold)](#module_math.approximately) ⇒ <code>boolean</code>
     * [.clamp(n, min, max)](#module_math.clamp) ⇒ <code>number</code>
     * [.distance(x1, y1, x2, y2)](#module_math.distance) ⇒ <code>number</code>
     * [.indexToX(index, width)](#module_math.indexToX) ⇒ <code>number</code>
@@ -28,10 +28,11 @@ TAU is a handy shortcut for 2PI
 **Kind**: static property of <code>[math](#module_math)</code>  
 <a name="module_math.approximately"></a>
 
-### math.approximately(a, b, threshold) ⇒ <code>number</code>
+### math.approximately(a, b, threshold) ⇒ <code>boolean</code>
 Compares two numbers for approximate equality
 
 **Kind**: static method of <code>[math](#module_math)</code>  
+**Returns**: <code>boolean</code> - Whether a is approximately equal to b  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -45,6 +46,7 @@ Compares two numbers for approximate equality
 Clamps a number between a minimum and maximum
 
 **Kind**: static method of <code>[math](#module_math)</code>  
+**Returns**: <code>number</code> - Clamped value of n  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -58,6 +60,7 @@ Clamps a number between a minimum and maximum
 Calculates the distance between two points
 
 **Kind**: static method of <code>[math](#module_math)</code>  
+**Returns**: <code>number</code> - Distance between x1, y1 and x2, y2  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -72,6 +75,7 @@ Calculates the distance between two points
 Converts an index to grid X coordinate
 
 **Kind**: static method of <code>[math](#module_math)</code>  
+**Returns**: <code>number</code> - X coordinate for index  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -84,6 +88,7 @@ Converts an index to grid X coordinate
 Converts an index to grid Y coordinate
 
 **Kind**: static method of <code>[math](#module_math)</code>  
+**Returns**: <code>number</code> - Y coordinate for index  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -96,6 +101,7 @@ Converts an index to grid Y coordinate
 Linear interpolation between two numbers
 
 **Kind**: static method of <code>[math](#module_math)</code>  
+**Returns**: <code>number</code> - Interpolated value between a and b  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -110,6 +116,7 @@ Linear interpolation between two numbers
 Returns the mid value between two numbers
 
 **Kind**: static method of <code>[math](#module_math)</code>  
+**Returns**: <code>number</code> - Mid value between a and b  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -122,6 +129,7 @@ Returns the mid value between two numbers
 Normalizes a value between a minimum and maximum
 
 **Kind**: static method of <code>[math](#module_math)</code>  
+**Returns**: <code>number</code> - Normalized value of n, between min and max  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -135,6 +143,7 @@ Normalizes a value between a minimum and maximum
 Rounds a value to a specified number of decimal places
 
 **Kind**: static method of <code>[math](#module_math)</code>  
+**Returns**: <code>number</code> - Rounded value of value  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -147,6 +156,7 @@ Rounds a value to a specified number of decimal places
 Returns the sign of a number
 
 **Kind**: static method of <code>[math](#module_math)</code>  
+**Returns**: <code>number</code> - Sign of n, -1, 0, or 1  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -158,6 +168,7 @@ Returns the sign of a number
 Converts grid coordinates to an index
 
 **Kind**: static method of <code>[math](#module_math)</code>  
+**Returns**: <code>number</code> - Index value of x, y  
 
 | Param | Type | Description |
 | --- | --- | --- |
