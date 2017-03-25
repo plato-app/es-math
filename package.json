@@ -4,13 +4,16 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "tape tests/**/*.js | tap-xunit > tests/results.xml"
   },
   "eslintConfig": {
     "extends": "plato"
   },
   "devDependencies": {
     "eslint": "^3.18.0",
-    "eslint-config-plato": "git+ssh://git@git.playchat.net:playchat/eslint-config-plato.git#1.0.2"
+    "eslint-config-plato": "git+ssh://git@git.playchat.net:playchat/eslint-config-plato.git#1.0.2",
+    "tap-xunit": "^1.7.0",
+    "tape": "^4.6.3"
   }
 }
