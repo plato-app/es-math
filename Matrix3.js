@@ -1,21 +1,37 @@
+/**
+ * A 3-dimensional matrix
+ * @module Matrix3
+ * @copyright Plato Team, Inc. 2016
+ * @author Geoff Blair <geoff@platoteam.com>
+ */
 "use strict";
 
 var tmpMat3 = null;
 var getTempMat3 = function () {
 	if (!tmpMat3) {
-		tmpMat3 = new exports();
+		tmpMat3 = new Matrix3();
 	}
 	return tmpMat3.identity();
 };
 
-var exports = module.exports = function () {
+/**
+ * Matrix3 constructor
+ * @alias module:Matrix3
+ * @class
+ * @constructor
+ */
+var Matrix3 = function () {
 	this.values = new Float32Array(9);
 	this.set.apply(this, arguments);
 };
 
-var proto = exports.prototype;
-
-proto.set = function () {
+/**
+ * Set the values of this matrix
+ * @param {...number} args Matrix values
+ * @returns {Matrix3} This matrix
+ * @chainable
+ */
+Matrix3.prototype.set = function () {
 	var v = this.values;
 	for (var i = 0, j = arguments.length; i < j; ++i) {
 		v[i] = arguments[i];
@@ -23,17 +39,33 @@ proto.set = function () {
 	return this;
 };
 
-proto.identity = function () {
+/**
+ * Resets this matrix to identity
+ * @returns {Matrix3} This matrix
+ * @chainable
+ */
+Matrix3.prototype.identity = function () {
 	return this.set(1, 0, 0, 0, 1, 0, 0, 0, 1);
 };
 
-proto.clone = function () {
-	var mat3 = new exports();
+/**
+ * Clones this matrix
+ * @returns {Matrix3} Cloned matrix
+ */
+Matrix3.prototype.clone = function () {
+	var mat3 = new Matrix3();
 	mat3.set.apply(mat3, this.values);
 	return mat3;
 };
 
-proto.translate = function (x, y) {
+/**
+ * Translates this matrix by x, y
+ * @param {number} x X coordinate
+ * @param {number} y Y coordinate
+ * @returns {Matrix3} This matrix
+ * @chainable
+ */
+Matrix3.prototype.translate = function (x, y) {
 	var m = this.values;
 	var a = m[0];
 	var b = m[1];
@@ -46,7 +78,14 @@ proto.translate = function (x, y) {
 	return this;
 };
 
-proto.scale = function (sx, sy) {
+/**
+ * Scales this matrix by sx, sy
+ * @param {number} sx X scaling
+ * @param {number} sy Y scaling
+ * @returns {Matrix3} This matrix
+ * @chainable
+ */
+Matrix3.prototype.scale = function (sx, sy) {
 	var m = this.values;
 	m[0] *= sx;
 	m[1] *= sy;
@@ -55,20 +94,38 @@ proto.scale = function (sx, sy) {
 	return this;
 };
 
-proto.rotate = function (radians) {
+/**
+ * Rotates this matrix by radians
+ * @param {number} radians Radians by which to rotate
+ * @returns {Matrix3} This matrix
+ * @chainable
+ */
+Matrix3.prototype.rotate = function (radians) {
 	var s = pmath.sin(radians);
 	var c = pmath.cos(radians);
 	var m = getTempMat3();
 	m.set(c, -s, 0, s, c, 0, 0, 0, 1);
-	exports.multiply(this, m, this);
+	Matrix3.multiply(this, m, this);
+	return this;
 };
 
-proto.multiply = function (m) {
+/**
+ * Multiplies this matrix by another
+ * @param {Matrix3} m Matrix by which to multiply
+ * @returns {Matrix3} This matrix
+ * @chainable
+ */
+Matrix3.prototype.multiply = function (m) {
 	exports.multiply(this, m, this);
 	return this;
 };
 
-proto.transformPoint = function (point) {
+/**
+ * Transforms a 2D point
+ * @param {{x: number, y: number}} point Point to be transformed
+ * @returns {undefined}
+ */
+Matrix3.prototype.transformPoint = function (point) {
 	var m = this.values;
 	var x = point.x;
 	var y = point.y;
@@ -78,9 +135,10 @@ proto.transformPoint = function (point) {
 
 /**
  * Does an inverse transform on a 2D point (like converting world coords to local space)
- * @param {{x:number, y:number}} point
+ * @param {{x: number, y: number}} point Point to be transformed
+ * @returns {undefined}
  */
-proto.inverseTransformPoint = function(point) {
+Matrix3.prototype.inverseTransformPoint = function(point) {
 	var m = this.values;
 	var id = 1 / (m[0] * m[4] - m[3] * m[1]);
 	var x = point.x;
@@ -89,7 +147,14 @@ proto.inverseTransformPoint = function(point) {
 	point.y = m[0] * id * y + -m[3] * id * x + (-m[5] * m[0] + m[2] * m[3]) * id;
 };
 
-exports.multiply = function (matA, matB, out) {
+/**
+ * Multiplies two matrices
+ * @param {Matrix3} matA Matrix A
+ * @param {Matrix3} matB Matrix B
+ * @param {Matrix3} out Destination matrix
+ * @returns {undefined}
+ */
+Matrix3.multiply = function (matA, matB, out) {
 	var a = matA.values;
 	var b = matB.values;
 	var o = out.values;

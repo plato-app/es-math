@@ -85,7 +85,7 @@ proto.range = function (min, max, round) {
  * @instance
  * @public
  * @param {number} chance Percentage chance in decimal form, e.g. 0.3 = 30% chance
- * @returns {boolean}
+ * @returns {boolean} Whether chance succeeded or not
  */
 proto.chance = function (chance) {
 	return this._next() < chance;
@@ -110,6 +110,7 @@ proto.choice = function (options) {
  * @instance
  * @public
  * @param {Array} items Array of items to shuffle
+ * @returns {undefined}
  */
 proto.shuffle = function (items) {
 	var len = items.length;
@@ -139,6 +140,7 @@ proto._next = function () {
  * @method _randomizeSeed
  * @instance
  * @private
+ * @returns {undefined}
  */
 proto._randomizeSeed = function () {
 	this._state = Math.floor(Math.random() * (M - 1));
