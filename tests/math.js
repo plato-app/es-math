@@ -24,8 +24,7 @@ tape("clamp", (t) => {
 
 tape("distance", (t) => {
 	t.plan(1);
-	// 1.4142135623730951
-	t.equal(math.distance(0, 0, 1, 1), 2);
+	t.equal(math.distance(0, 0, 1, 1), Math.sqrt(Math.pow(1, 2) + Math.pow(1, 2)));
 });
 
 tape("sign", (t) => {
