@@ -191,7 +191,7 @@ Matrix3.multiply = function (matA, matB, out) {
  */
 Matrix3.prototype.inverse = function( ret ) {
 
-	if (typeof ret === 'undefined') {
+	if (typeof ret === "undefined") {
 		ret = new Matrix3();
 	}
 
