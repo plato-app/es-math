@@ -184,3 +184,50 @@ Matrix3.multiply = function (matA, matB, out) {
 	o[7] = 0;
 	o[8] = 1;
 };
+
+/*
+ * Create an inverse matrix.
+ * @param ret {Matrix3=} optional resulting inverse matrix. If not set, a new matrix is created to hold its result.
+ */
+Matrix3.prototype.inverse = function( ret ) {
+
+	if (typeof ret === 'undefined') {
+		ret = new Matrix3();
+	}
+
+	var matrix = this.values;
+
+	var m00 = matrix[0];
+	var m01 = matrix[1];
+	var m02 = matrix[2];
+	var m10 = matrix[3];
+	var m11 = matrix[4];
+	var m12 = matrix[5];
+	var m20 = matrix[6];
+	var m21 = matrix[7];
+	var m22 = matrix[8];
+
+	var determinant = m00 * (m11 * m22 - m21 * m12) -
+		m10 * (m01 * m22 - m21 * m02) +
+		m20 * (m01 * m12 - m11 * m02);
+
+	if (determinant === 0) {
+		ret.identity();
+		return ret;
+	}
+
+	determinant = 1 / determinant;
+
+	var res = ret.values;
+	res[0] = (m11 * m22 - m12 * m21) * determinant;
+	res[1] = (m02 * m21 - m01 * m22) * determinant;
+	res[2] = (m01 * m12 - m02 * m11) * determinant;
+	res[3] = (m12 * m20 - m10 * m22) * determinant;
+	res[4] = (m00 * m22 - m02 * m20) * determinant;
+	res[5] = (m02 * m10 - m00 * m12) * determinant;
+	res[6] = (m10 * m21 - m11 * m20) * determinant;
+	res[7] = (m01 * m20 - m00 * m21) * determinant;
+	res[8] = (m00 * m11 - m01 * m10) * determinant;
+
+	return new Matrix3(res[0], res[1], res[2], res[3], res[4], res[5], res[6], res[7], res[8]);
+};
