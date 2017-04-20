@@ -9,6 +9,7 @@
 /**
  * TAU is a handy shortcut for 2PI
  * @type {number}
+ * @since 1.2.1
  */
 exports.TAU = Math.PI * 2;
 
@@ -18,6 +19,7 @@ exports.TAU = Math.PI * 2;
  * @param {number} b Number B
  * @param {number} threshold Equality threshold (defaults to Number.EPSILON)
  * @returns {boolean} Whether a is approximately equal to b
+ * @since 1.2.1
  */
 exports.approximately = function (a, b, threshold) {
 	var t = threshold !== undefined ? threshold : Number.EPSILON;
@@ -30,6 +32,7 @@ exports.approximately = function (a, b, threshold) {
  * @param {number} min Minimum
  * @param {number} max Maximum
  * @returns {number} Clamped value of n
+ * @since 1.2.1
  */
 exports.clamp = function (n, min, max) {
 	return Math.min(Math.max(n, min), max);
@@ -42,6 +45,7 @@ exports.clamp = function (n, min, max) {
  * @param {number} x2 Second X coordinate
  * @param {number} y2 Second Y coordinate
  * @returns {number} Distance between x1, y1 and x2, y2
+ * @since 1.2.1
  */
 exports.distance = function (x1, y1, x2, y2) {
 	return Math.sqrt(pmath.pow(x2 - x1, 2) + pmath.pow(y2 - y1, 2));
@@ -52,6 +56,7 @@ exports.distance = function (x1, y1, x2, y2) {
  * @param {number} index Index
  * @param {number} width Grid width
  * @returns {number} X coordinate for index
+ * @since 1.2.1
  */
 exports.indexToX = function (index, width) {
 	return index % width;
@@ -62,6 +67,7 @@ exports.indexToX = function (index, width) {
  * @param {number} index Index
  * @param {number} width Grid width
  * @returns {number} Y coordinate for index
+ * @since 1.2.1
  */
 exports.indexToY = function (index, width) {
 	return Math.floor(index / width);
@@ -74,6 +80,7 @@ exports.indexToY = function (index, width) {
  * @param {number} t Normalized time (between 0 - 1)
  * @param {boolean} round Rounds return value
  * @returns {number} Interpolated value between a and b
+ * @since 1.2.1
  */
 exports.lerp = function (a, b, t, round) {
 	var v = a + ((b - a) * t);
@@ -85,6 +92,7 @@ exports.lerp = function (a, b, t, round) {
  * @param {number} a Number A
  * @param {number} b Number B
  * @returns {number} Mid value between a and b
+ * @since 1.2.1
  */
 exports.mid = function (a, b) {
 	return Math.round((a + b) / 2);
@@ -96,6 +104,7 @@ exports.mid = function (a, b) {
  * @param {number} min Minimum
  * @param {number} max Maximum
  * @returns {number} Normalized value of n, between min and max
+ * @since 1.2.1
  */
 exports.normalize = function (n, min, max) {
 	return (n - min) / (max - min);
@@ -106,6 +115,7 @@ exports.normalize = function (n, min, max) {
  * @param {number} value Value to round
  * @param {number} decimals Number of decimal places to round
  * @returns {number} Rounded value of value
+ * @since 1.2.1
  */
 exports.round = function (value, decimals) {
 	var mod = pmath.pow(10, decimals);
@@ -116,6 +126,7 @@ exports.round = function (value, decimals) {
  * Returns the sign of a number
  * @param {number} n Number
  * @returns {number} Sign of n, -1, 0, or 1
+ * @since 1.2.1
  */
 exports.sign = function (n) {
 	return n > 0 ? 1 : n === 0 ? 0 : -1;
@@ -127,6 +138,7 @@ exports.sign = function (n) {
  * @param {number} y Y coordinate
  * @param {number} width Grid width
  * @returns {number} Index value of x, y
+ * @since 1.2.1
  */
 exports.xyToIndex = function (x, y, width) {
 	return y * width + x;

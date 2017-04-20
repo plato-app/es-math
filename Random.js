@@ -1,6 +1,6 @@
 /**
  * A seeded, pseudo-random number generator
- * @module Random
+ * @module math/Random
  * @copyright Plato Team, Inc. 2016
  * @author Geoff Blair <geoff@platoteam.com>
  */
@@ -14,9 +14,8 @@ var C = 12345; // increment
 
 /**
  * Random constructor
- * @class
- * @alias module:Random
  * @constructor
+ * @since 1.2.1
  */
 var Random = function () {
 	this._state = 0;
@@ -24,15 +23,13 @@ var Random = function () {
 };
 
 module.exports = Random;
-var proto = module.exports.prototype;
 
 /**
  * Seed value
- * @name seed
  * @type {number}
- * @instance
+ * @since 1.2.1
  */
-Object.defineProperty(proto, "seed", {
+Object.defineProperty(Random.prototype, "seed", {
 	get: function () {
 		return this._state;
 	},
@@ -43,76 +40,64 @@ Object.defineProperty(proto, "seed", {
 
 /**
  * Returns a normalized random value, i.e. between 0 and 1
- * @method normal
- * @instance
- * @public
  * @returns {number} Normalized random value
+ * @since 1.2.1
  */
-proto.normal = function () {
+Random.prototype.normal = function () {
 	return this._next();
 };
 
 /**
  * Returns a random integer value between 0 and max (inclusive)
- * @method integer
- * @instance
- * @public
  * @param {number} max Maximum integer value
  * @returns {number} Random integer
+ * @since 1.2.1
  */
-proto.integer = function (max) {
+Random.prototype.integer = function (max) {
 	return Math.round(this._next() * max);
 };
 
 /**
  * Returns a random value between min and max, optionally rounded
- * @method range
- * @instance
- * @public
  * @param {number} min Minimum value
  * @param {number} max Maximum value
  * @param {boolean} round Whether to round the result, optional
  * @returns {number} Random value
+ * @since 1.2.1
  */
-proto.range = function (min, max, round) {
+Random.prototype.range = function (min, max, round) {
 	var value = Math.round(this._next() * (max - min) + min);
 	return round ? Math.round(value) : value;
 };
 
 /**
  * Returns true if a randomized normal is within a percentage chance
- * @method chance
- * @instance
- * @public
  * @param {number} chance Percentage chance in decimal form, e.g. 0.3 = 30% chance
  * @returns {boolean} Whether chance succeeded or not
+ * @since 1.2.1
  */
-proto.chance = function (chance) {
+Random.prototype.chance = function (chance) {
 	return this._next() < chance;
 };
 
 /**
  * Returns a random pick from an array of options
- * @method choice
- * @instance
- * @public
  * @param {Array} options Array of options to choose from
  * @returns {any} Chosen item
+ * @since 1.2.1
  */
-proto.choice = function (options) {
+Random.prototype.choice = function (options) {
 	var index = this.integer(options.length - 1);
 	return options[index];
 };
 
 /**
  * Shuffles an array in-place using Fisher-Yates algorithm
- * @method shuffle
- * @instance
- * @public
  * @param {Array} items Array of items to shuffle
  * @returns {undefined}
+ * @since 1.2.1
  */
-proto.shuffle = function (items) {
+Random.prototype.shuffle = function (items) {
 	var len = items.length;
 	if (len < 2) { return; }
 	for (var i = 0; i < len; ++i) {
@@ -125,23 +110,21 @@ proto.shuffle = function (items) {
 
 /**
  * Returns the next psuedo-random value
- * @method _next
- * @instance
- * @private
  * @returns {number} Next state
+ * @private
+ * @since 1.2.1
  */
-proto._next = function () {
+Random.prototype._next = function () {
 	this._state = (A * this._state + C) % M;
 	return this._state / M;
 };
 
 /**
  * Randomizes this PRNG's state value
- * @method _randomizeSeed
- * @instance
- * @private
  * @returns {undefined}
+ * @private
+ * @since 1.2.1
  */
-proto._randomizeSeed = function () {
+Random.prototype._randomizeSeed = function () {
 	this._state = Math.floor(Math.random() * (M - 1));
 };

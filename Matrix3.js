@@ -1,6 +1,6 @@
 /**
  * A 3-dimensional matrix
- * @module Matrix3
+ * @module math/Matrix3
  * @copyright Plato Team, Inc. 2016
  * @author Geoff Blair <geoff@platoteam.com>
  */
@@ -16,9 +16,8 @@ var getTempMat3 = function () {
 
 /**
  * Matrix3 constructor
- * @alias module:Matrix3
- * @class
  * @constructor
+ * @since 1.2.1
  */
 var Matrix3 = function () {
 	this.values = new Float32Array(9);
@@ -32,6 +31,7 @@ module.exports = Matrix3;
  * @param {...number} args Matrix values
  * @returns {Matrix3} This matrix
  * @chainable
+ * @since 1.2.1
  */
 Matrix3.prototype.set = function () {
 	var v = this.values;
@@ -45,6 +45,7 @@ Matrix3.prototype.set = function () {
  * Resets this matrix to identity
  * @returns {Matrix3} This matrix
  * @chainable
+ * @since 1.2.1
  */
 Matrix3.prototype.identity = function () {
 	return this.set(1, 0, 0, 0, 1, 0, 0, 0, 1);
@@ -53,6 +54,7 @@ Matrix3.prototype.identity = function () {
 /**
  * Clones this matrix
  * @returns {Matrix3} Cloned matrix
+ * @since 1.2.1
  */
 Matrix3.prototype.clone = function () {
 	var mat3 = new Matrix3();
@@ -66,6 +68,7 @@ Matrix3.prototype.clone = function () {
  * @param {number} y Y coordinate
  * @returns {Matrix3} This matrix
  * @chainable
+ * @since 1.2.1
  */
 Matrix3.prototype.translate = function (x, y) {
 	var m = this.values;
@@ -86,6 +89,7 @@ Matrix3.prototype.translate = function (x, y) {
  * @param {number} sy Y scaling
  * @returns {Matrix3} This matrix
  * @chainable
+ * @since 1.2.1
  */
 Matrix3.prototype.scale = function (sx, sy) {
 	var m = this.values;
@@ -101,6 +105,7 @@ Matrix3.prototype.scale = function (sx, sy) {
  * @param {number} radians Radians by which to rotate
  * @returns {Matrix3} This matrix
  * @chainable
+ * @since 1.2.1
  */
 Matrix3.prototype.rotate = function (radians) {
 	var s = pmath.sin(radians);
@@ -116,6 +121,7 @@ Matrix3.prototype.rotate = function (radians) {
  * @param {Matrix3} m Matrix by which to multiply
  * @returns {Matrix3} This matrix
  * @chainable
+ * @since 1.2.1
  */
 Matrix3.prototype.multiply = function (m) {
 	Matrix3.multiply(this, m, this);
@@ -126,6 +132,7 @@ Matrix3.prototype.multiply = function (m) {
  * Transforms a 2D point
  * @param {{x: number, y: number}} point Point to be transformed
  * @returns {undefined}
+ * @since 1.2.1
  */
 Matrix3.prototype.transformPoint = function (point) {
 	var m = this.values;
@@ -139,6 +146,7 @@ Matrix3.prototype.transformPoint = function (point) {
  * Does an inverse transform on a 2D point (like converting world coords to local space)
  * @param {{x: number, y: number}} point Point to be transformed
  * @returns {undefined}
+ * @since 1.2.1
  */
 Matrix3.prototype.inverseTransformPoint = function(point) {
 	var m = this.values;
@@ -155,6 +163,7 @@ Matrix3.prototype.inverseTransformPoint = function(point) {
  * @param {Matrix3} matB Matrix B
  * @param {Matrix3} out Destination matrix
  * @returns {undefined}
+ * @since 1.2.1
  */
 Matrix3.multiply = function (matA, matB, out) {
 	var a = matA.values;
@@ -185,9 +194,10 @@ Matrix3.multiply = function (matA, matB, out) {
 	o[8] = 1;
 };
 
-/*
+/**
  * Create an inverse matrix.
  * @param ret {Matrix3=} optional resulting inverse matrix. If not set, a new matrix is created to hold its result.
+ * @since 1.2.1
  */
 Matrix3.prototype.inverse = function( ret ) {
 
