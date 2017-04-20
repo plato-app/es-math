@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "eslint": "^3.18.0",
-    "eslint-config-plato": "git+ssh://git@git.playchat.net:playchat/eslint-config-plato.git#1.0.2",
+    "eslint-config-plato": "git+ssh://git@git.playchat.net:playchat/eslint-config-plato.git#1.0.4",
     "jsdoc": "^3.4.3",
     "minami": "^1.2.3",
     "tap-xunit": "^1.7.0",

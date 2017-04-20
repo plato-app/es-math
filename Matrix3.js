@@ -196,10 +196,11 @@ Matrix3.multiply = function (matA, matB, out) {
 
 /**
  * Create an inverse matrix.
- * @param ret {Matrix3=} optional resulting inverse matrix. If not set, a new matrix is created to hold its result.
+ * @param {Matrix3=} [ret] Resulting inverse matrix. If not set, a new matrix is created to hold its result.
+ * @returns {Matrix3} Resulting matrix
  * @since 1.2.1
  */
-Matrix3.prototype.inverse = function( ret ) {
+Matrix3.prototype.inverse = function (ret) {
 
 	if (typeof ret === "undefined") {
 		ret = new Matrix3();
