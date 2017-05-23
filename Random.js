@@ -45,26 +45,25 @@ Random.prototype.normal = function () {
 };
 
 /**
- * Returns a random integer value between 0 and max (inclusive)
- * @param {number} max Maximum integer value
- * @returns {number} Random integer
+ * Returns a random value between min and max
+ * @param {number} min Minimum value
+ * @param {number} max Maximum value
+ * @returns {number} Random value between min and max
  * @since 1.2.1
  */
-Random.prototype.integer = function (max) {
-	return Math.round(this._next() * max);
+Random.prototype.range = function (min, max) {
+	return this._next() * (max - min) + min;
 };
 
 /**
- * Returns a random value between min and max, optionally rounded
- * @param {number} min Minimum value
- * @param {number} max Maximum value
- * @param {boolean} round Whether to round the result, optional
- * @returns {number} Random value
- * @since 1.2.1
+ * Returns a random integer between min (inclusive) and max (inclusive)
+ * @param {number} min Minimum integer
+ * @param {number} max Maximum integer
+ * @returns {number} Random integer between min and max
+ * @since 2.0.0
  */
-Random.prototype.range = function (min, max, round) {
-	var value = Math.round(this._next() * (max - min) + min);
-	return round ? Math.round(value) : value;
+Random.prototype.rangeInt = function (min, max) {
+	return Math.floor(this.range(0, max - min + 1) + min);
 };
 
 /**
@@ -79,12 +78,12 @@ Random.prototype.chance = function (chance) {
 
 /**
  * Returns a random pick from an array of options
- * @param {Array} options Array of options to choose from
- * @returns {any} Chosen item
+ * @param {Array} options Array of options from which to choose
+ * @returns {*} Chosen item
  * @since 1.2.1
  */
 Random.prototype.choice = function (options) {
-	var index = this.integer(options.length - 1);
+	var index = this.rangeInt(0, options.length - 1);
 	return options[index];
 };
 
@@ -98,7 +97,7 @@ Random.prototype.shuffle = function (items) {
 	var len = items.length;
 	if (len < 2) { return; }
 	for (var i = 0; i < len; ++i) {
-		var j = this.range(i, len - 1);
+		var j = this.rangeInt(i, len - 1);
 		var swap = items[i];
 		items[i] = items[j];
 		items[j] = swap;
