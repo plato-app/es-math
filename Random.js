@@ -7,10 +7,9 @@
 "use strict";
 
 // See: https://en.wikipedia.org/wiki/Linear_congruential_generator
-// Same parameters used by glibc
 var M = 0x80000000; // modulus, 2^31
-var A = 1103515245; // multiplier
-var C = 12345; // increment
+var A = 48271; // multiplier
+var C = 0; // increment
 
 /**
  * Random constructor
@@ -21,8 +20,6 @@ var Random = function () {
 	this._state = 0;
 	this._randomizeSeed();
 };
-
-module.exports = Random;
 
 /**
  * Seed value
@@ -128,3 +125,5 @@ Random.prototype._next = function () {
 Random.prototype._randomizeSeed = function () {
 	this._state = Math.floor(Math.random() * (M - 1));
 };
+
+module.exports = Random;
