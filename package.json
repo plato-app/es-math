@@ -16,6 +16,7 @@
     "eslint-config-plato": "git+ssh://git@git.playchat.net:playchat/eslint-config-plato.git#1.0.4",
     "jsdoc": "^3.4.3",
     "minami": "^1.2.3",
+    "papi": "git+ssh://git@git.playchat.net:playchat/papi.git#3.0.0",
     "tap-xunit": "^1.7.0",
     "tape": "^4.6.3"
   }

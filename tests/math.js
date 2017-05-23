@@ -1,8 +1,7 @@
+require("papi"); // Init PAPI stubs
+
 var tape = require("tape");
 var math = require("../index");
-
-// Testing stubs
-global.pmath = require("./stubs/pmath");
 
 tape("TAU", (t) => {
 	t.plan(1);
