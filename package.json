@@ -1,23 +1,18 @@
 {
-  "name": "math",
-  "version": "2.0.0",
-  "license": "UNLICENSED",
-  "private": true,
-  "scripts": {
-    "lint": "eslint .",
-    "test": "tape 'tests/**/*.js' | tap-xunit > tests/results.xml",
-    "doc": "jsdoc -c jsdoc.json"
-  },
-  "eslintConfig": {
-    "extends": "plato"
-  },
-  "devDependencies": {
-    "eslint": "^3.18.0",
-    "eslint-config-plato": "git+ssh://git@git.playchat.net:playchat/eslint-config-plato.git#1.0.4",
-    "jsdoc": "^3.4.3",
-    "minami": "^1.2.3",
-    "papi": "git+ssh://git@git.playchat.net:playchat/papi.git#3.0.0",
-    "tap-xunit": "^1.7.0",
-    "tape": "^4.6.3"
-  }
+	"name": "@plato/math",
+	"version": "3.0.0",
+	"license": "UNLICENSED",
+	"private": true,
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"build": "tsc",
+		"test": "tape 'tests/**/*.js'",
+		"test-ci": "tape 'tests/**/*.js' | tap-xunit > test-results.xml"
+	},
+	"devDependencies": {
+		"tap-xunit": "^1.7.0",
+		"tape": "^4.6.3",
+		"typescript": "^2.5.3"
+	}
 }

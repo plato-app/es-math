@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.0.0
+
+* Convert to TypeScript
+* Remove `Random` and `Matrix3` (split into separate gamelibs)
+* Use `@plato` package scope
+
 ## 2.0.0
 
 * Remove optional rounding parameter from `Random.range`

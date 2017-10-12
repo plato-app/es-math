@@ -1,0 +1,12 @@
+export declare const TAU: number;
+export declare function approximately(a: number, b: number, threshold?: number): boolean;
+export declare function clamp(n: number, min: number, max: number): number;
+export declare function distance(x1: number, y1: number, x2: number, y2: number): number;
+export declare function indexToX(index: number, width: number): number;
+export declare function indexToY(index: number, width: number): number;
+export declare function lerp(a: number, b: number, t: number, round?: boolean): number;
+export declare function mid(a: number, b: number): number;
+export declare function normalize(n: number, min: number, max: number): number;
+export declare function round(value: number, decimals?: number): number;
+export declare function sign(n: number): number;
+export declare function xyToIndex(x: number, y: number, width: number): number;

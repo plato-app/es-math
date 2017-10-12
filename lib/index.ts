@@ -1,17 +1,9 @@
 /**
- * Math utilities
- * @module math
- * @copyright Plato Team, Inc. 2016
- * @author Geoff Blair <geoff@platoteam.com>
- */
-"use strict";
-
-/**
  * TAU is a handy shortcut for 2PI
  * @type {number}
  * @since 1.2.1
  */
-exports.TAU = Math.PI * 2;
+export const TAU = Math.PI * 2;
 
 /**
  * Compares two numbers for approximate equality
@@ -21,10 +13,9 @@ exports.TAU = Math.PI * 2;
  * @returns {boolean} Whether a is approximately equal to b
  * @since 1.2.1
  */
-exports.approximately = function (a, b, threshold) {
-	var t = threshold !== undefined ? threshold : Number.EPSILON;
-	return Math.abs(a - b) < t;
-};
+export function approximately (a: number, b: number, threshold = Number.EPSILON): boolean {
+	return Math.abs(a - b) < threshold
+}
 
 /**
  * Clamps a number between a minimum and maximum
@@ -34,9 +25,9 @@ exports.approximately = function (a, b, threshold) {
  * @returns {number} Clamped value of n
  * @since 1.2.1
  */
-exports.clamp = function (n, min, max) {
-	return Math.min(Math.max(n, min), max);
-};
+export function clamp (n: number, min: number, max: number): number {
+	return Math.min(Math.max(n, min), max)
+}
 
 /**
  * Calculates the distance between two points
@@ -47,9 +38,9 @@ exports.clamp = function (n, min, max) {
  * @returns {number} Distance between x1, y1 and x2, y2
  * @since 1.2.1
  */
-exports.distance = function (x1, y1, x2, y2) {
-	return Math.sqrt(pmath.pow(x2 - x1, 2) + pmath.pow(y2 - y1, 2));
-};
+export function distance (x1: number, y1: number, x2: number, y2: number): number {
+	return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2))
+}
 
 /**
  * Converts an index to grid X coordinate
@@ -58,9 +49,9 @@ exports.distance = function (x1, y1, x2, y2) {
  * @returns {number} X coordinate for index
  * @since 1.2.1
  */
-exports.indexToX = function (index, width) {
-	return index % width;
-};
+export function indexToX (index: number, width: number): number {
+	return index % width
+}
 
 /**
  * Converts an index to grid Y coordinate
@@ -69,9 +60,9 @@ exports.indexToX = function (index, width) {
  * @returns {number} Y coordinate for index
  * @since 1.2.1
  */
-exports.indexToY = function (index, width) {
-	return Math.floor(index / width);
-};
+export function indexToY (index: number, width: number): number {
+	return Math.floor(index / width)
+}
 
 /**
  * Linear interpolation between two numbers
@@ -82,10 +73,10 @@ exports.indexToY = function (index, width) {
  * @returns {number} Interpolated value between a and b
  * @since 1.2.1
  */
-exports.lerp = function (a, b, t, round) {
-	var v = a + ((b - a) * t);
-	return round ? Math.round(v) : v;
-};
+export function lerp (a: number, b: number, t: number, round = false): number {
+	let v = a + ((b - a) * t)
+	return round ? Math.round(v) : v
+}
 
 /**
  * Returns the mid value between two numbers
@@ -94,9 +85,9 @@ exports.lerp = function (a, b, t, round) {
  * @returns {number} Mid value between a and b
  * @since 1.2.1
  */
-exports.mid = function (a, b) {
-	return Math.round((a + b) / 2);
-};
+export function mid (a: number, b: number): number {
+	return Math.round((a + b) / 2)
+}
 
 /**
  * Normalizes a value between a minimum and maximum
@@ -106,9 +97,9 @@ exports.mid = function (a, b) {
  * @returns {number} Normalized value of n, between min and max
  * @since 1.2.1
  */
-exports.normalize = function (n, min, max) {
-	return (n - min) / (max - min);
-};
+export function normalize (n: number, min: number, max: number): number {
+	return (n - min) / (max - min)
+}
 
 /**
  * Rounds a value to a specified number of decimal places
@@ -117,10 +108,10 @@ exports.normalize = function (n, min, max) {
  * @returns {number} Rounded value of value
  * @since 1.2.1
  */
-exports.round = function (value, decimals) {
-	var mod = pmath.pow(10, decimals);
-	return Math.round(value * mod) / mod;
-};
+export function round (value: number, decimals = 0): number {
+	let mod = Math.pow(10, decimals)
+	return Math.round(value * mod) / mod
+}
 
 /**
  * Returns the sign of a number
@@ -128,9 +119,9 @@ exports.round = function (value, decimals) {
  * @returns {number} Sign of n, -1, 0, or 1
  * @since 1.2.1
  */
-exports.sign = function (n) {
-	return n > 0 ? 1 : n === 0 ? 0 : -1;
-};
+export function sign (n: number): number {
+	return n > 0 ? 1 : n === 0 ? 0 : -1
+}
 
 /**
  * Converts grid coordinates to an index
@@ -140,6 +131,6 @@ exports.sign = function (n) {
  * @returns {number} Index value of x, y
  * @since 1.2.1
  */
-exports.xyToIndex = function (x, y, width) {
-	return y * width + x;
-};
+export function xyToIndex (x: number, y: number, width: number): number {
+	return y * width + x
+}
