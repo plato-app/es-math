@@ -9,7 +9,7 @@ tape("TAU", t => {
 tape("approximately", t => {
 	t.plan(2);
 	t.equal(math.approximately(100, 100 - (Number.EPSILON / 2)), true);
-	t.equal(math.approximately(100, 100.0001), true);
+	t.equal(math.approximately(100, 100.0001), false);
 });
 
 tape("clamp", t => {
