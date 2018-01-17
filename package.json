@@ -13,6 +13,6 @@
 	"devDependencies": {
 		"tap-xunit": "^1.7.0",
 		"tape": "^4.6.3",
-		"typescript": "^2.5.3"
+		"typescript": "^2.6.2"
 	}
 }
