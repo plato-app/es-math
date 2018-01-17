@@ -22,10 +22,10 @@ function indexToY(index, width) {
     return Math.floor(index / width);
 }
 exports.indexToY = indexToY;
-function lerp(a, b, t, round) {
-    if (round === void 0) { round = false; }
+function lerp(a, b, t, roundResult) {
+    if (roundResult === void 0) { roundResult = false; }
     var v = a + ((b - a) * t);
-    return round ? Math.round(v) : v;
+    return roundResult ? Math.round(v) : v;
 }
 exports.lerp = lerp;
 function mid(a, b) {
