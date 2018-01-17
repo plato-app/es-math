@@ -7,12 +7,15 @@
 	"typings": "dist/index.d.ts",
 	"scripts": {
 		"build": "tsc",
+		"lint": "tslint -c tslint.json 'lib/**/*.ts'",
 		"test": "tape 'tests/**/*.js'",
 		"test-ci": "tape 'tests/**/*.js' | tap-xunit > test-results.xml"
 	},
 	"devDependencies": {
+		"@plato/tslint-config": "git+ssh://git@git.playchat.net:playchat/tslint-config.git#^1.0.0",
 		"tap-xunit": "^1.7.0",
 		"tape": "^4.6.3",
+		"tslint": "^5.9.1",
 		"typescript": "^2.6.2"
 	}
 }
