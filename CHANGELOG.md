@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.1
+
+* TypeScript/TSLint updates
+
 ## 3.0.0
 
 * Convert to TypeScript
