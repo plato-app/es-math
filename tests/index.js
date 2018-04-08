@@ -12,6 +12,13 @@ tape("approximately", t => {
 	t.equal(math.approximately(100, 100.0001), false);
 });
 
+tape("average", t => {
+	t.equal(math.average([1, 2, 3, 4, 5]), 3);
+	t.equal(math.average([10, 80, 14, 6, 100]), 42);
+	t.equal(math.average([8000, 4, 25, 3245, 1501]), 2555);
+	t.end();
+});
+
 tape("clamp", t => {
 	t.plan(3);
 	t.equal(math.clamp(25, 50, 100), 50);

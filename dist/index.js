@@ -6,6 +6,11 @@ function approximately(a, b, threshold) {
     return Math.abs(a - b) < threshold;
 }
 exports.approximately = approximately;
+function average(numbers) {
+    var total = numbers.reduce(function (a, b) { return a + b; }, 0);
+    return total / numbers.length;
+}
+exports.average = average;
 function clamp(n, min, max) {
     return Math.min(Math.max(n, min), max);
 }

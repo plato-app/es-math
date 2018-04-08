@@ -18,6 +18,18 @@ if (math.approximately(0.001, 0.002)) {
 }
 ```
 
+### average
+
+`average(numbers: number[]): number`
+
+Returns the average of an array of numbers.
+
+Example:
+```ts
+let avg = math.average([1, 2, 3, 4, 5]);
+// avg = 3
+```
+
 ### clamp
 
 `clamp (n: number, min: number, max: number): number`

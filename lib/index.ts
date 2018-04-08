@@ -18,6 +18,14 @@ export function approximately(a: number, b: number, threshold = Number.EPSILON):
 }
 
 /**
+ * Returns the average of an array of numbers
+ */
+export function average(numbers: number[]): number {
+	const total = numbers.reduce((a, b) => a + b, 0);
+	return total / numbers.length;
+}
+
+/**
  * Clamps a number between a minimum and maximum
  * @param {number} n Number to be clamped
  * @param {number} min Minimum
