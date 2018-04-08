@@ -19,6 +19,7 @@ export function approximately(a: number, b: number, threshold = Number.EPSILON):
 
 /**
  * Returns the average of an array of numbers
+ * @since 3.1.0
  */
 export function average(numbers: number[]): number {
 	const total = numbers.reduce((a, b) => a + b, 0);

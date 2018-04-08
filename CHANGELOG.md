@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.1.0
+
+* Add `average` function
+
 ## 3.0.1
 
 * TypeScript/TSLint updates
