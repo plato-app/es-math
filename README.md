@@ -30,6 +30,8 @@ let avg = math.average([1, 2, 3, 4, 5]);
 // avg = 3
 ```
 
+* Since: `3.1.0`
+
 ### clamp
 
 `clamp (n: number, min: number, max: number): number`
@@ -106,6 +108,8 @@ Example:
 let a = math.lerpAngle(0, Math.PI * 1.5, 0.5);
 // a = -0.7853981633974483
 ```
+
+* Since: `3.2.0`
 
 ### mid
 

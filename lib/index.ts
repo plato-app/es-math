@@ -89,6 +89,7 @@ export function lerp(a: number, b: number, t: number, roundResult = false): numb
 
 /**
  * Linear interpolation between two angles via shortest angle
+ * @since 3.2.0
  */
 export function lerpAngle(a: number, b: number, t: number): number {
 	const da = (b - a) % TAU;

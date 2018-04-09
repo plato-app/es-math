@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.0
+
+* Add `lerpAngle` function
+
 ## 3.1.0
 
 * Add `average` function
