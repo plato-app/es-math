@@ -95,6 +95,18 @@ var n = math.lerp(10, 20, 0.5);
 // n = 15
 ```
 
+### lerpAngle
+
+`lerpAngle (a: number, b: number, t: number): number`
+
+Linear interpolation between two angles via shortest angle
+
+Example:
+```ts
+let a = math.lerpAngle(0, Math.PI * 1.5, 0.5);
+// a = -0.7853981633974483
+```
+
 ### mid
 
 `mid (a: number, b: number): number`

@@ -33,6 +33,12 @@ function lerp(a, b, t, roundResult) {
     return roundResult ? Math.round(v) : v;
 }
 exports.lerp = lerp;
+function lerpAngle(a, b, t) {
+    var da = (b - a) % exports.TAU;
+    var n = 2 * da % exports.TAU - da;
+    return a + n * t;
+}
+exports.lerpAngle = lerpAngle;
 function mid(a, b) {
     return Math.round((a + b) / 2);
 }

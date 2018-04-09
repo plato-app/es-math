@@ -88,6 +88,15 @@ export function lerp(a: number, b: number, t: number, roundResult = false): numb
 }
 
 /**
+ * Linear interpolation between two angles via shortest angle
+ */
+export function lerpAngle(a: number, b: number, t: number): number {
+	const da = (b - a) % TAU;
+	const n = 2 * da % TAU - da;
+	return a + n * t;
+}
+
+/**
  * Returns the mid value between two numbers
  * @param {number} a Number A
  * @param {number} b Number B

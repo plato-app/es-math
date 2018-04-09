@@ -31,6 +31,13 @@ tape("distance", t => {
 	t.equal(math.distance(0, 0, 1, 1), Math.sqrt(Math.pow(1, 2) + Math.pow(1, 2)));
 });
 
+tape("lerpAngle", t => {
+	t.equal(math.lerpAngle(0, Math.PI / 2, 0.5), Math.PI * 0.25);
+	t.equal(math.lerpAngle(0, Math.PI, 0.5), -Math.PI / 2);
+	t.equal(math.lerpAngle(0, Math.PI * 1.5, 0.5), -Math.PI * 0.25);
+	t.end();
+});
+
 tape("sign", t => {
 	t.plan(3);
 	t.equal(math.sign(-100), -1);
