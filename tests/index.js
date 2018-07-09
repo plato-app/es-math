@@ -26,6 +26,14 @@ tape("clamp", t => {
 	t.equal(math.clamp(75, 50, 100), 75);
 });
 
+tape("degreesToRadians", t => {
+	t.plan(4);
+	t.equal(math.degreesToRadians(45), Math.PI / 4);
+	t.equal(math.degreesToRadians(90), Math.PI / 2);
+	t.equal(math.degreesToRadians(180), Math.PI);
+	t.equal(math.degreesToRadians(270), Math.PI * 1.5);
+});
+
 tape("distance", t => {
 	t.plan(1);
 	t.equal(math.distance(0, 0, 1, 1), Math.sqrt(Math.pow(1, 2) + Math.pow(1, 2)));

@@ -1,3 +1,5 @@
+const RadiansPerDegree = Math.PI / 180;
+
 /**
  * TAU is a handy shortcut for 2PI
  * @type {number}
@@ -36,6 +38,15 @@ export function average(numbers: number[]): number {
  */
 export function clamp(n: number, min: number, max: number): number {
 	return Math.min(Math.max(n, min), max);
+}
+
+/**
+ * Converts degrees to radians
+ * @param {number} degrees Angle in degrees
+ * @returns {number} Angle in radians
+ */
+export function degreesToRadians(degrees: number): number {
+	return degrees * RadiansPerDegree;
 }
 
 /**

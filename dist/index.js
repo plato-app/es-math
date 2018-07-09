@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var RadiansPerDegree = Math.PI / 180;
 exports.TAU = Math.PI * 2;
 function approximately(a, b, threshold) {
     if (threshold === void 0) { threshold = Number.EPSILON; }
@@ -15,6 +16,10 @@ function clamp(n, min, max) {
     return Math.min(Math.max(n, min), max);
 }
 exports.clamp = clamp;
+function degreesToRadians(degrees) {
+    return degrees * RadiansPerDegree;
+}
+exports.degreesToRadians = degreesToRadians;
 function distance(x1, y1, x2, y2) {
     return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 }

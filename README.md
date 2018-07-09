@@ -45,6 +45,18 @@ var n = math.clamp(500, 100, 200);
 // n = 200
 ```
 
+### degreesToRadians
+
+`degreesToRadians (degrees: number): number`
+
+Converts an angle in degrees to radians.
+
+Example:
+```ts
+let a = degreesToRadians(180);
+// a =
+```
+
 ### distance
 
 `distance (x1: number, y1: number, x2: number, y2: number): number`
