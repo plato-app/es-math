@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.0
+
+* Add `degreesToRadians` function
+
 ## 3.2.0
 
 * Add `lerpAngle` function

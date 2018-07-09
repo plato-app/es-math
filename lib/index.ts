@@ -44,6 +44,7 @@ export function clamp(n: number, min: number, max: number): number {
  * Converts degrees to radians
  * @param {number} degrees Angle in degrees
  * @returns {number} Angle in radians
+ * @since 3.3.0
  */
 export function degreesToRadians(degrees: number): number {
 	return degrees * RadiansPerDegree;

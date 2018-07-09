@@ -57,6 +57,8 @@ let a = degreesToRadians(180);
 // a =
 ```
 
+* Since: `3.3.0`
+
 ### distance
 
 `distance (x1: number, y1: number, x2: number, y2: number): number`
