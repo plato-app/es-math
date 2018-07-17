@@ -137,6 +137,7 @@ export function normalize(n: number, min: number, max: number): number {
  * Converts radians to degrees
  * @param {number} radians Radians
  * @returns {number} Degrees
+ * @since 3.4.0
  */
 export function radiansToDegrees(radians: number): number {
 	return radians * DegreesPerRadian;

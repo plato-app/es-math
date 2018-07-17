@@ -163,6 +163,8 @@ const degrees = radiansToDegrees(Math.PI);
 // degrees = 180
 ```
 
+* Since: `3.4.0`
+
 ### round
 
 `round (value: number, decimals = 0): number`

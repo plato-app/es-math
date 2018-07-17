@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.0
+
+* Add `radiansToDegrees` function
+
 ## 3.3.0
 
 * Add `degreesToRadians` function
