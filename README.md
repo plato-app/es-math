@@ -151,6 +151,18 @@ var n = math.normalize(500, 0, 1000);
 // n = 0.5
 ```
 
+### radiansToDegrees
+
+`radiansToDegrees (radians: number): number`
+
+Converts an angle in radians to degrees.
+
+Example:
+```ts
+const degrees = radiansToDegrees(Math.PI);
+// degrees = 180
+```
+
 ### round
 
 `round (value: number, decimals = 0): number`

@@ -46,6 +46,14 @@ tape("lerpAngle", t => {
 	t.end();
 });
 
+tape("radiansToDegrees", t => {
+	t.plan(4);
+	t.equal(math.radiansToDegrees(Math.PI / 4), 45);
+	t.equal(math.radiansToDegrees(Math.PI / 2), 90);
+	t.equal(math.radiansToDegrees(Math.PI), 180);
+	t.equal(math.radiansToDegrees(Math.PI * 1.5), 270);
+});
+
 tape("sign", t => {
 	t.plan(3);
 	t.equal(math.sign(-100), -1);

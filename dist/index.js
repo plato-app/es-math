@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var RadiansPerDegree = Math.PI / 180;
+var DegreesPerRadian = 180 / Math.PI;
 exports.TAU = Math.PI * 2;
 function approximately(a, b, threshold) {
     if (threshold === void 0) { threshold = Number.EPSILON; }
@@ -52,6 +53,10 @@ function normalize(n, min, max) {
     return (n - min) / (max - min);
 }
 exports.normalize = normalize;
+function radiansToDegrees(radians) {
+    return radians * DegreesPerRadian;
+}
+exports.radiansToDegrees = radiansToDegrees;
 function round(value, decimals) {
     if (decimals === void 0) { decimals = 0; }
     var mod = Math.pow(10, decimals);

@@ -1,4 +1,5 @@
 const RadiansPerDegree = Math.PI / 180;
+const DegreesPerRadian = 180 / Math.PI;
 
 /**
  * TAU is a handy shortcut for 2PI
@@ -130,6 +131,15 @@ export function mid(a: number, b: number): number {
  */
 export function normalize(n: number, min: number, max: number): number {
 	return (n - min) / (max - min);
+}
+
+/**
+ * Converts radians to degrees
+ * @param {number} radians Radians
+ * @returns {number} Degrees
+ */
+export function radiansToDegrees(radians: number): number {
+	return radians * DegreesPerRadian;
 }
 
 /**
