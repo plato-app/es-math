@@ -4,13 +4,19 @@ const RadiansPerDegree = Math.PI / 180;
 /** Number of degrees per radian */
 const DegreesPerRadian = 180 / Math.PI;
 
-/** Point */
+/**
+ * A point in 2D space
+ * @since 3.5.0
+ */
 export interface IPoint {
 	x: number;
 	y: number;
 }
 
-/** Rectangle */
+/**
+ * A rectangle in 2D space
+ * @since 3.5.0
+ */
 export interface IRectangle {
 	x: number;
 	y: number;
