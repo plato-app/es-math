@@ -1,3 +1,13 @@
+export interface IPoint {
+    x: number;
+    y: number;
+}
+export interface IRectangle {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+}
 export declare const TAU: number;
 export declare function approximately(a: number, b: number, threshold?: number): boolean;
 export declare function average(numbers: number[]): number;

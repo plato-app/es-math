@@ -1,5 +1,22 @@
+/** Number of radians per degree */
 const RadiansPerDegree = Math.PI / 180;
+
+/** Number of degrees per radian */
 const DegreesPerRadian = 180 / Math.PI;
+
+/** Point */
+export interface IPoint {
+	x: number;
+	y: number;
+}
+
+/** Rectangle */
+export interface IRectangle {
+	x: number;
+	y: number;
+	width: number;
+	height: number;
+}
 
 /**
  * TAU is a handy shortcut for 2PI
