@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.5.0
+
+* Add `IPoint` interface
+* Add `IRectangle` interface
+
 ## 3.4.0
 
 * Add `radiansToDegrees` function
