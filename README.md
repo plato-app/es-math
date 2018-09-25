@@ -4,6 +4,30 @@ Math related utility functions.
 
 ## API Reference
 
+### IPoint
+
+A point in 2D space.
+
+```ts
+interface IPoint {
+	x: number;
+	y: number;
+}
+```
+
+### IRectangle
+
+A rectangle in 2D space.
+
+```ts
+interface IRectangle {
+	x: number;
+	y: number;
+	width: number;
+	height: number;
+}
+```
+
 ### approximately
 
 `approximately (a: number, b: number, threshold = Number.EPSILON): boolean`
