@@ -120,7 +120,7 @@ export function indexToY(index: number, width: number): number {
  * @since 1.2.1
  */
 export function lerp(a: number, b: number, t: number, roundResult = false): number {
-	let v = a + ((b - a) * t);
+	const v = a + ((b - a) * t);
 	return roundResult ? Math.round(v) : v;
 }
 
@@ -179,7 +179,7 @@ export function radiansToDegrees(radians: number): number {
  * @since 1.2.1
  */
 export function round(value: number, decimals = 0): number {
-	let mod = Math.pow(10, decimals);
+	const mod = Math.pow(10, decimals);
 	return Math.round(value * mod) / mod;
 }
 
