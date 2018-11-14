@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.6.0
+
+* Migrate @plato dependencies to npm
+
 ## 3.5.0
 
 * Add `IPoint` interface
