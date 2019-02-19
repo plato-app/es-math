@@ -197,6 +197,7 @@ export function sign(n: number): number {
  * Wrap radians around a complete circle (PI * 2)
  * @param radians Radians to wrap
  * @returns Wrapped radians
+ * @since 3.7.0
  */
 export function wrapRadians(radians: number): number {
 	return (radians + TAU) % TAU;

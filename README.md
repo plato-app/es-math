@@ -4,6 +4,8 @@ Math related utility functions.
 
 ## API Reference
 
+* Constants
+	* [`TAU`](#tau)
 * Interfaces
 	* [`IPoint`](#ipoint)
 	* [`IRectangle`](#irectangle)
@@ -25,6 +27,10 @@ Math related utility functions.
 	* [`wrapRadians`](#wrapradians)
 	* [`xyToIndex`](#xytoindex)
 
+### TAU
+
+A constant equal to `2PI`. See: [Tau proposals][tau]
+
 ### IPoint
 
 A point in 2D space.
@@ -35,6 +41,8 @@ interface IPoint {
 	y: number;
 }
 ```
+
+* Since: `3.5.0`
 
 ### IRectangle
 
@@ -48,6 +56,8 @@ interface IRectangle {
 	height: number;
 }
 ```
+
+* Since: `3.5.0`
 
 ### approximately
 
@@ -249,6 +259,8 @@ const angle = wrapRadians(Math.PI * 4.5);
 // angle = Math.PI / 2
 ```
 
+* Since: `3.7.0`
+
 ### xyToIndex
 
 `xyToIndex (x: number, y: number, width: number): number`
@@ -261,3 +273,5 @@ Example:
 var index = math.xyToIndex(1, 1, 3);
 // index = 4
 ```
+
+[tau]: https://en.wikipedia.org/wiki/Turn_(geometry)#Tau_proposals

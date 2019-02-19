@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.7.0
+
+* Add `wrapRadians` function
+
 ## 3.6.0
 
 * Migrate @plato dependencies to npm
