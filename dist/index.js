@@ -67,6 +67,10 @@ function sign(n) {
     return n > 0 ? 1 : n === 0 ? 0 : -1;
 }
 exports.sign = sign;
+function wrapRadians(radians) {
+    return (radians + exports.TAU) % exports.TAU;
+}
+exports.wrapRadians = wrapRadians;
 function xyToIndex(x, y, width) {
     return y * width + x;
 }

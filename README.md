@@ -4,6 +4,27 @@ Math related utility functions.
 
 ## API Reference
 
+* Interfaces
+	* [`IPoint`](#ipoint)
+	* [`IRectangle`](#irectangle)
+* Functions
+	* [`approximately`](#approximately)
+	* [`average`](#average)
+	* [`clamp`](#clamp)
+	* [`degreesToRadians`](#degreestoradians)
+	* [`distance`](#distance)
+	* [`indexToX`](#indextox)
+	* [`indexToY`](#indextoy)
+	* [`lerp`](#lerp)
+	* [`lerpAngle`](#lerpangle)
+	* [`mid`](#mid)
+	* [`normalize`](#normalize)
+	* [`radiansToDegrees`](#radianstodegrees)
+	* [`round`](#round)
+	* [`sign`](#sign)
+	* [`wrapRadians`](#wrapradians)
+	* [`xyToIndex`](#xytoindex)
+
 ### IPoint
 
 A point in 2D space.
@@ -213,6 +234,19 @@ Example:
 ```js
 var n = math.sign(-100);
 // n = -1
+```
+
+### wrapRadians
+
+`wrapRadians(radians: number): number`
+
+Wraps radians between `0` and `2PI`
+
+Example:
+
+```ts
+const angle = wrapRadians(Math.PI * 4.5);
+// angle = Math.PI / 2
 ```
 
 ### xyToIndex

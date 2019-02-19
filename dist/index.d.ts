@@ -23,4 +23,5 @@ export declare function normalize(n: number, min: number, max: number): number;
 export declare function radiansToDegrees(radians: number): number;
 export declare function round(value: number, decimals?: number): number;
 export declare function sign(n: number): number;
+export declare function wrapRadians(radians: number): number;
 export declare function xyToIndex(x: number, y: number, width: number): number;

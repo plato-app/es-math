@@ -194,6 +194,15 @@ export function sign(n: number): number {
 }
 
 /**
+ * Wrap radians around a complete circle (PI * 2)
+ * @param radians Radians to wrap
+ * @returns Wrapped radians
+ */
+export function wrapRadians(radians: number): number {
+	return (radians + TAU) % TAU;
+}
+
+/**
  * Converts grid coordinates to an index
  * @param x X coordinate
  * @param y Y coordinate

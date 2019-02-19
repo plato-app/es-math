@@ -60,3 +60,12 @@ tape("sign", t => {
 	t.equal(math.sign(0), 0);
 	t.equal(math.sign(100), 1);
 });
+
+tape("wrapRadians", t => {
+	const quarter = Math.PI / 2;
+	t.equal(math.wrapRadians(-quarter), quarter * 3);
+	t.equal(math.wrapRadians(-Math.PI), Math.PI);
+	t.equal(math.wrapRadians(-quarter * 3), quarter);
+	t.ok(math.approximately(math.wrapRadians(quarter * 7), quarter * 3, 0.00000000000001));
+	t.end();
+});
