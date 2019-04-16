@@ -1,15 +1,16 @@
 # @plato/math
 
-Math related utility functions.
+Math-related utility functions.
 
 ## API Reference
 
-* Constants
-	* [`TAU`](#tau)
-* Interfaces
+* [Interfaces](#interfaces)
+	* [`ICircle`](#icircle)
 	* [`IPoint`](#ipoint)
 	* [`IRectangle`](#irectangle)
-* Functions
+* [Constants](#constants)
+	* [`TAU`](#tau)
+* [Functions](#functions)
 	* [`approximately`](#approximately)
 	* [`average`](#average)
 	* [`clamp`](#clamp)
@@ -27,11 +28,23 @@ Math related utility functions.
 	* [`wrapRadians`](#wrapradians)
 	* [`xyToIndex`](#xytoindex)
 
-### TAU
+---
 
-A constant equal to `2PI`. See: [Tau proposals][tau]
+### Interfaces
 
-### IPoint
+#### ICircle
+
+A circle in 2D space.
+
+```ts
+interface ICircle {
+	x: number;
+	y: number;
+	radius: number;
+}
+```
+
+#### IPoint
 
 A point in 2D space.
 
@@ -44,7 +57,7 @@ interface IPoint {
 
 * Since: `3.5.0`
 
-### IRectangle
+#### IRectangle
 
 A rectangle in 2D space.
 
@@ -59,219 +72,278 @@ interface IRectangle {
 
 * Since: `3.5.0`
 
-### approximately
+---
 
-`approximately (a: number, b: number, threshold = Number.EPSILON): boolean`
+### Constants
+
+#### TAU
+
+```ts
+const TAU: number;
+```
+
+A constant equal to `2PI`. See [The Tau Manifesto](https://tauday.com/).
+
+---
+
+### Functions
+
+#### approximately
+
+```ts
+approximately(a: number, b: number, threshold?: number): boolean;
+```
 
 Compares two numbers for approximate equality.
 
 Example:
 
 ```js
-if (math.approximately(0.001, 0.002)) {
+if (approximately(0.001, 0.002)) {
 	// 0.001 and 0.002 are approximately equal
 }
 ```
 
-### average
+#### average
 
-`average(numbers: number[]): number`
+```ts
+average(numbers: number[]): number;
+```
 
 Returns the average of an array of numbers.
 
 Example:
-```ts
-let avg = math.average([1, 2, 3, 4, 5]);
+```js
+const avg = average([1, 2, 3, 4, 5]);
 // avg = 3
 ```
 
 * Since: `3.1.0`
 
-### clamp
+#### clamp
 
-`clamp (n: number, min: number, max: number): number`
+```ts
+clamp(n: number, min: number, max: number): number;
+```
 
 Clamps a number between a minimum and maximum
 
 Example:
 
 ```js
-var n = math.clamp(500, 100, 200);
+const n = clamp(500, 100, 200);
 // n = 200
 ```
 
-### degreesToRadians
+#### degreesToRadians
 
-`degreesToRadians (degrees: number): number`
+```ts
+degreesToRadians(degrees: number): number;
+```
 
 Converts an angle in degrees to radians.
 
 Example:
-```ts
-let a = degreesToRadians(180);
-// a =
+```js
+const a = degreesToRadians(180);
+// a = 3.141592653589793
 ```
 
 * Since: `3.3.0`
+* See: [`radiansToDegrees`](#radianstodegrees)
 
-### distance
+#### distance
 
-`distance (x1: number, y1: number, x2: number, y2: number): number`
+```ts
+distance(x1: number, y1: number, x2: number, y2: number): number;
+```
 
 Calculates the distance between two points
 
 Example:
 
 ```js
-var d = math.distance(5, 5, 10, 10);
+var d = distance(5, 5, 10, 10);
 // d = 7.071067812
 ```
 
-### indexToX
+#### indexToX
 
-`indexToX (index: number, width: number): number`
+```ts
+indexToX(index: number, width: number): number;
+```
 
 Converts an index to grid X coordinate
 
 Example:
 
 ```js
-var x = math.indexToX(4, 3);
+const x = indexToX(4, 3);
 // x = 1
 ```
 
-### indexToY
+* See: [`indexToY`](#indextoy)
+* See: [`xyToIndex`](#xytoindex)
 
-`indexToY (index: number, width: number): number`
+#### indexToY
+
+```ts
+indexToY(index: number, width: number): number;
+```
 
 Converts an index to grid Y coordinate
 
 Example:
 
 ```js
-var y = math.indexToY(4, 3);
+const y = indexToY(4, 3);
 // y = 1
 ```
 
-### lerp
+* See: [`indexToX`](#indextox)
+* See: [`xyToIndex`](#xytoindex)
 
-`lerp (a: number, b: number, t: number, round = false): number`
+#### lerp
+
+```ts
+lerp(a: number, b: number, t: number, round?: boolean): number;
+```
 
 Linear interpolation between two numbers
 
 Example:
 
 ```js
-var n = math.lerp(10, 20, 0.5);
+const n = lerp(10, 20, 0.5);
 // n = 15
 ```
 
-### lerpAngle
+#### lerpAngle
 
-`lerpAngle (a: number, b: number, t: number): number`
+```ts
+lerpAngle(a: number, b: number, t: number): number;
+```
 
 Linear interpolation between two angles via shortest angle
 
 Example:
-```ts
-let a = math.lerpAngle(0, Math.PI * 1.5, 0.5);
+
+```js
+const a = lerpAngle(0, Math.PI * 1.5, 0.5);
 // a = -0.7853981633974483
 ```
 
 * Since: `3.2.0`
 
-### mid
+#### mid
 
-`mid (a: number, b: number): number`
+```ts
+mid(a: number, b: number): number;
+```
 
 Returns the mid value between two numbers
 
 Example:
 
 ```js
-var n = math.mid(100, 200);
+const n = mid(100, 200);
 // n = 150
 ```
 
-### normalize
+#### normalize
 
-`normalize (n: number, min: number, max: number): number`
+```ts
+normalize(n: number, min: number, max: number): number;
+```
 
 Normalizes a value between a minimum and maximum
 
 Example:
 
 ```js
-var n = math.normalize(500, 0, 1000);
+const n = normalize(500, 0, 1000);
 // n = 0.5
 ```
 
-### radiansToDegrees
+#### radiansToDegrees
 
-`radiansToDegrees (radians: number): number`
+```ts
+radiansToDegrees(radians: number): number;
+```
 
 Converts an angle in radians to degrees.
 
 Example:
-```ts
+
+```js
 const degrees = radiansToDegrees(Math.PI);
 // degrees = 180
 ```
 
 * Since: `3.4.0`
+* See: [`degreesToRadians`](#degreestoradians)
 
-### round
+#### round
 
-`round (value: number, decimals = 0): number`
+```ts
+round(value: number, decimals?: number): number;
+```
 
-Rounds a value to a specified number of decimal places
+Rounds a value to a specified number of decimal places.
 
 Example:
 
 ```js
-var n = math.round(123.456789, 2);
+const n = round(123.456789, 2);
 // n = 123.45
 ```
 
-### sign
+#### sign
 
-`sign (n: number): number`
+```ts
+sign(n: number): number;
+```
 
-Returns the sign of a number
+Returns the sign of a number.
 
 Example:
 
 ```js
-var n = math.sign(-100);
+const n = sign(-100);
 // n = -1
 ```
 
-### wrapRadians
+#### wrapRadians
 
-`wrapRadians(radians: number): number`
+```ts
+wrapRadians(radians: number): number;
+```
 
-Wraps radians between `0` and `2PI`
+Wraps radians between `0` and `2PI`.
 
 Example:
 
-```ts
+```js
 const angle = wrapRadians(Math.PI * 4.5);
 // angle = Math.PI / 2
 ```
 
 * Since: `3.7.0`
 
-### xyToIndex
+#### xyToIndex
 
-`xyToIndex (x: number, y: number, width: number): number`
+```ts
+xyToIndex(x: number, y: number, width: number): number;
+```
 
-Converts grid coordinates to an index
+Converts grid coordinates to an index.
 
 Example:
 
 ```js
-var index = math.xyToIndex(1, 1, 3);
+const index = xyToIndex(1, 1, 3);
 // index = 4
 ```
 
-[tau]: https://en.wikipedia.org/wiki/Turn_(geometry)#Tau_proposals
+* See: [`indexToX`](#indextox)
+* See: [`indexToY`](#indextoy)
