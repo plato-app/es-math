@@ -5,6 +5,15 @@ const RadiansPerDegree = Math.PI / 180;
 const DegreesPerRadian = 180 / Math.PI;
 
 /**
+ * A circle in 2D space
+ */
+export interface ICircle {
+	x: number;
+	y: number;
+	radius: number;
+}
+
+/**
  * A point in 2D space
  * @since 3.5.0
  */
