@@ -1,5 +1,5 @@
 const tape = require("tape");
-const math = require("../dist");
+const math = require("../dist-cjs");
 
 tape("TAU", t => {
 	t.plan(1);
@@ -67,5 +67,28 @@ tape("wrapRadians", t => {
 	t.equal(math.wrapRadians(-Math.PI), Math.PI);
 	t.equal(math.wrapRadians(-quarter * 3), quarter);
 	t.ok(math.approximately(math.wrapRadians(quarter * 7), quarter * 3, 0.00000000000001));
+	t.end();
+});
+
+tape("Rectangle", (t) => {
+	const rect = new math.Rectangle(10, 20, 30, 40);
+	t.equal(rect.x, 10);
+	t.equal(rect.y, 20);
+	t.equal(rect.width, 30);
+	t.equal(rect.height, 40);
+	t.equal(rect.right, 40);
+	t.equal(rect.bottom, 60);
+	t.end();
+});
+
+tape("Rectangle.fit", (t) => {
+	const rect = new math.Rectangle(10, 10, 100, 100);
+	rect.fit({ x: 20, y: 20, width: 60, height: 60 });
+	t.equal(rect.x, 20);
+	t.equal(rect.y, 20);
+	t.equal(rect.width, 60);
+	t.equal(rect.height, 60);
+	t.equal(rect.right, 80);
+	t.equal(rect.bottom, 80);
 	t.end();
 });

@@ -1,6 +1,6 @@
 # @plato/math
 
-Math-related utility functions.
+Math-related objects and utility functions.
 
 ## API Reference
 
