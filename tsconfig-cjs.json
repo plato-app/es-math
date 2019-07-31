@@ -1,12 +1,11 @@
 {
 	"compilerOptions": {
-		"target": "es6",
+		"target": "es5",
 		"lib": ["es6"],
-		"module": "es6",
+		"module": "commonjs",
 		"strict": true,
 		"removeComments": true,
-		"outDir": "dist-es",
-		"declaration": true
+		"outDir": "dist-cjs"
 	},
 	"include": [
 		"lib/**/*.ts"
