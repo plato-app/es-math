@@ -3,10 +3,12 @@
 		"target": "es6",
 		"lib": ["es6"],
 		"module": "es6",
+		"moduleResolution": "node",
 		"strict": true,
 		"removeComments": true,
-		"outDir": "dist-es",
-		"declaration": true
+		"outDir": "dist/es",
+		"declaration": true,
+		"declarationDir": "dist/types"
 	},
 	"include": [
 		"lib/**/*.ts"

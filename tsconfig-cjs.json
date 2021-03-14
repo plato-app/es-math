@@ -1,14 +1,10 @@
 {
+	"extends": "./tsconfig.json",
 	"compilerOptions": {
 		"target": "es5",
-		"lib": ["es6"],
 		"module": "commonjs",
-		"strict": true,
-		"removeComments": true,
-		"outDir": "dist-cjs"
-	},
-	"include": [
-		"lib/**/*.ts"
-	],
-	"compileOnSave": true
+		"outDir": "dist/cjs",
+		"declaration": false,
+		"declarationDir": null
+	}
 }

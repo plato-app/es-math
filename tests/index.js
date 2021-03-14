@@ -1,5 +1,5 @@
 const tape = require("tape");
-const math = require("../dist-cjs");
+const math = require("../dist/cjs");
 
 tape("TAU", t => {
 	t.plan(1);
