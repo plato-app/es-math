@@ -4,7 +4,7 @@ import { IRectangle } from "./core";
 export class Rectangle implements IRectangle {
 
 	/** Fit rectangle A inside rectangle B */
-	public static fit(a: IRectangle, b: IRectangle) {
+	public static fit(a: IRectangle, b: IRectangle): void {
 		// Calculate new dimensions for a
 		const x1 = Math.max(a.x, b.x);
 		const y1 = Math.max(b.y, b.y);
@@ -52,7 +52,7 @@ export class Rectangle implements IRectangle {
 	 * @param width Width
 	 * @param height Height
 	 */
-	public set(x: number, y: number, width: number, height: number) {
+	public set(x: number, y: number, width: number, height: number): void {
 		this.x = x;
 		this.y = y;
 		this.width = width;
@@ -63,7 +63,7 @@ export class Rectangle implements IRectangle {
 	 * Fit this rectangle inside another
 	 * @param rect Rectangle to fit inside
 	 */
-	public fit(rect: IRectangle) {
+	public fit(rect: IRectangle): void {
 		Rectangle.fit(this, rect);
 	}
 
