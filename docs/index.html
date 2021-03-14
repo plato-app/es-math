@@ -1,0 +1,447 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@plato/math</title>
+	<meta name="description" content="Documentation for @plato/math">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@plato/math</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>@plato/math</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#platomath" id="platomath" style="color: inherit; text-decoration: none;">
+					<h1>@plato/math</h1>
+				</a>
+				<p>Math-related objects and utility functions.</p>
+				<a href="#api-reference" id="api-reference" style="color: inherit; text-decoration: none;">
+					<h2>API Reference</h2>
+				</a>
+				<ul>
+					<li><a href="#interfaces">Interfaces</a><ul>
+							<li><a href="#icircle"><code>ICircle</code></a></li>
+							<li><a href="#ipoint"><code>IPoint</code></a></li>
+							<li><a href="#irectangle"><code>IRectangle</code></a></li>
+						</ul>
+					</li>
+					<li><a href="#constants">Constants</a><ul>
+							<li><a href="#tau"><code>TAU</code></a></li>
+						</ul>
+					</li>
+					<li><a href="#functions">Functions</a><ul>
+							<li><a href="#approximately"><code>approximately</code></a></li>
+							<li><a href="#average"><code>average</code></a></li>
+							<li><a href="#clamp"><code>clamp</code></a></li>
+							<li><a href="#degreestoradians"><code>degreesToRadians</code></a></li>
+							<li><a href="#distance"><code>distance</code></a></li>
+							<li><a href="#indextox"><code>indexToX</code></a></li>
+							<li><a href="#indextoy"><code>indexToY</code></a></li>
+							<li><a href="#lerp"><code>lerp</code></a></li>
+							<li><a href="#lerpangle"><code>lerpAngle</code></a></li>
+							<li><a href="#mid"><code>mid</code></a></li>
+							<li><a href="#normalize"><code>normalize</code></a></li>
+							<li><a href="#radianstodegrees"><code>radiansToDegrees</code></a></li>
+							<li><a href="#round"><code>round</code></a></li>
+							<li><a href="#sign"><code>sign</code></a></li>
+							<li><a href="#wrapradians"><code>wrapRadians</code></a></li>
+							<li><a href="#xytoindex"><code>xyToIndex</code></a></li>
+						</ul>
+					</li>
+				</ul>
+				<hr>
+				<a href="#interfaces" id="interfaces" style="color: inherit; text-decoration: none;">
+					<h3>Interfaces</h3>
+				</a>
+				<a href="#icircle" id="icircle" style="color: inherit; text-decoration: none;">
+					<h4>ICircle</h4>
+				</a>
+				<p>A circle in 2D space.</p>
+				<pre><code class="language-ts"><span style="color: #0000FF">interface</span><span style="color: #000000"> </span><span style="color: #267F99">ICircle</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">x</span><span style="color: #000000">: </span><span style="color: #267F99">number</span><span style="color: #000000">;</span>
+<span style="color: #000000">    </span><span style="color: #001080">y</span><span style="color: #000000">: </span><span style="color: #267F99">number</span><span style="color: #000000">;</span>
+<span style="color: #000000">    </span><span style="color: #001080">radius</span><span style="color: #000000">: </span><span style="color: #267F99">number</span><span style="color: #000000">;</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<a href="#ipoint" id="ipoint" style="color: inherit; text-decoration: none;">
+					<h4>IPoint</h4>
+				</a>
+				<p>A point in 2D space.</p>
+				<pre><code class="language-ts"><span style="color: #0000FF">interface</span><span style="color: #000000"> </span><span style="color: #267F99">IPoint</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">x</span><span style="color: #000000">: </span><span style="color: #267F99">number</span><span style="color: #000000">;</span>
+<span style="color: #000000">    </span><span style="color: #001080">y</span><span style="color: #000000">: </span><span style="color: #267F99">number</span><span style="color: #000000">;</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<ul>
+					<li>Since: <code>3.5.0</code></li>
+				</ul>
+				<a href="#irectangle" id="irectangle" style="color: inherit; text-decoration: none;">
+					<h4>IRectangle</h4>
+				</a>
+				<p>A rectangle in 2D space.</p>
+				<pre><code class="language-ts"><span style="color: #0000FF">interface</span><span style="color: #000000"> </span><span style="color: #267F99">IRectangle</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">x</span><span style="color: #000000">: </span><span style="color: #267F99">number</span><span style="color: #000000">;</span>
+<span style="color: #000000">    </span><span style="color: #001080">y</span><span style="color: #000000">: </span><span style="color: #267F99">number</span><span style="color: #000000">;</span>
+<span style="color: #000000">    </span><span style="color: #001080">width</span><span style="color: #000000">: </span><span style="color: #267F99">number</span><span style="color: #000000">;</span>
+<span style="color: #000000">    </span><span style="color: #001080">height</span><span style="color: #000000">: </span><span style="color: #267F99">number</span><span style="color: #000000">;</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<ul>
+					<li>Since: <code>3.5.0</code></li>
+				</ul>
+				<hr>
+				<a href="#constants" id="constants" style="color: inherit; text-decoration: none;">
+					<h3>Constants</h3>
+				</a>
+				<a href="#tau" id="tau" style="color: inherit; text-decoration: none;">
+					<h4>TAU</h4>
+				</a>
+				<pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">TAU</span><span style="color: #000000">: </span><span style="color: #267F99">number</span><span style="color: #000000">;</span>
+</code></pre>
+				<p>A constant equal to <code>2PI</code>. See <a href="https://tauday.com/">The Tau Manifesto</a>.</p>
+				<hr>
+				<a href="#functions" id="functions" style="color: inherit; text-decoration: none;">
+					<h3>Functions</h3>
+				</a>
+				<a href="#approximately" id="approximately" style="color: inherit; text-decoration: none;">
+					<h4>approximately</h4>
+				</a>
+				<pre><code class="language-ts"><span style="color: #795E26">approximately</span><span style="color: #000000">(</span><span style="color: #001080">a</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">, </span><span style="color: #001080">b</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">, </span><span style="color: #001080">threshold</span><span style="color: #000000">?: </span><span style="color: #001080">number</span><span style="color: #000000">): </span><span style="color: #001080">boolean</span><span style="color: #000000">;</span>
+</code></pre>
+				<p>Compares two numbers for approximate equality.</p>
+				<p>Example:</p>
+				<pre><code class="language-js"><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #795E26">approximately</span><span style="color: #000000">(</span><span style="color: #098658">0.001</span><span style="color: #000000">, </span><span style="color: #098658">0.002</span><span style="color: #000000">)) {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// 0.001 and 0.002 are approximately equal</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<a href="#average" id="average" style="color: inherit; text-decoration: none;">
+					<h4>average</h4>
+				</a>
+				<pre><code class="language-ts"><span style="color: #795E26">average</span><span style="color: #000000">(</span><span style="color: #001080">numbers</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">[]): </span><span style="color: #001080">number</span><span style="color: #000000">;</span>
+</code></pre>
+				<p>Returns the average of an array of numbers.</p>
+				<p>Example:</p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">avg</span><span style="color: #000000"> = </span><span style="color: #795E26">average</span><span style="color: #000000">([</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">, </span><span style="color: #098658">4</span><span style="color: #000000">, </span><span style="color: #098658">5</span><span style="color: #000000">]);</span>
+<span style="color: #008000">// avg = 3</span>
+</code></pre>
+				<ul>
+					<li>Since: <code>3.1.0</code></li>
+				</ul>
+				<a href="#clamp" id="clamp" style="color: inherit; text-decoration: none;">
+					<h4>clamp</h4>
+				</a>
+				<pre><code class="language-ts"><span style="color: #795E26">clamp</span><span style="color: #000000">(</span><span style="color: #001080">n</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">, </span><span style="color: #001080">min</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">, </span><span style="color: #001080">max</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">): </span><span style="color: #001080">number</span><span style="color: #000000">;</span>
+</code></pre>
+				<p>Clamps a number between a minimum and maximum</p>
+				<p>Example:</p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">n</span><span style="color: #000000"> = </span><span style="color: #795E26">clamp</span><span style="color: #000000">(</span><span style="color: #098658">500</span><span style="color: #000000">, </span><span style="color: #098658">100</span><span style="color: #000000">, </span><span style="color: #098658">200</span><span style="color: #000000">);</span>
+<span style="color: #008000">// n = 200</span>
+</code></pre>
+				<a href="#degreestoradians" id="degreestoradians" style="color: inherit; text-decoration: none;">
+					<h4>degreesToRadians</h4>
+				</a>
+				<pre><code class="language-ts"><span style="color: #795E26">degreesToRadians</span><span style="color: #000000">(</span><span style="color: #001080">degrees</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">): </span><span style="color: #001080">number</span><span style="color: #000000">;</span>
+</code></pre>
+				<p>Converts an angle in degrees to radians.</p>
+				<p>Example:</p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">a</span><span style="color: #000000"> = </span><span style="color: #795E26">degreesToRadians</span><span style="color: #000000">(</span><span style="color: #098658">180</span><span style="color: #000000">);</span>
+<span style="color: #008000">// a = 3.141592653589793</span>
+</code></pre>
+				<ul>
+					<li>Since: <code>3.3.0</code></li>
+					<li>See: <a href="#radianstodegrees"><code>radiansToDegrees</code></a></li>
+				</ul>
+				<a href="#distance" id="distance" style="color: inherit; text-decoration: none;">
+					<h4>distance</h4>
+				</a>
+				<pre><code class="language-ts"><span style="color: #795E26">distance</span><span style="color: #000000">(</span><span style="color: #001080">x1</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">, </span><span style="color: #001080">y1</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">, </span><span style="color: #001080">x2</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">, </span><span style="color: #001080">y2</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">): </span><span style="color: #001080">number</span><span style="color: #000000">;</span>
+</code></pre>
+				<p>Calculates the distance between two points</p>
+				<p>Example:</p>
+				<pre><code class="language-js"><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">d</span><span style="color: #000000"> = </span><span style="color: #795E26">distance</span><span style="color: #000000">(</span><span style="color: #098658">5</span><span style="color: #000000">, </span><span style="color: #098658">5</span><span style="color: #000000">, </span><span style="color: #098658">10</span><span style="color: #000000">, </span><span style="color: #098658">10</span><span style="color: #000000">);</span>
+<span style="color: #008000">// d = 7.071067812</span>
+</code></pre>
+				<a href="#indextox" id="indextox" style="color: inherit; text-decoration: none;">
+					<h4>indexToX</h4>
+				</a>
+				<pre><code class="language-ts"><span style="color: #795E26">indexToX</span><span style="color: #000000">(</span><span style="color: #001080">index</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">, </span><span style="color: #001080">width</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">): </span><span style="color: #001080">number</span><span style="color: #000000">;</span>
+</code></pre>
+				<p>Converts an index to grid X coordinate</p>
+				<p>Example:</p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">x</span><span style="color: #000000"> = </span><span style="color: #795E26">indexToX</span><span style="color: #000000">(</span><span style="color: #098658">4</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">);</span>
+<span style="color: #008000">// x = 1</span>
+</code></pre>
+				<ul>
+					<li>See: <a href="#indextoy"><code>indexToY</code></a></li>
+					<li>See: <a href="#xytoindex"><code>xyToIndex</code></a></li>
+				</ul>
+				<a href="#indextoy" id="indextoy" style="color: inherit; text-decoration: none;">
+					<h4>indexToY</h4>
+				</a>
+				<pre><code class="language-ts"><span style="color: #795E26">indexToY</span><span style="color: #000000">(</span><span style="color: #001080">index</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">, </span><span style="color: #001080">width</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">): </span><span style="color: #001080">number</span><span style="color: #000000">;</span>
+</code></pre>
+				<p>Converts an index to grid Y coordinate</p>
+				<p>Example:</p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">y</span><span style="color: #000000"> = </span><span style="color: #795E26">indexToY</span><span style="color: #000000">(</span><span style="color: #098658">4</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">);</span>
+<span style="color: #008000">// y = 1</span>
+</code></pre>
+				<ul>
+					<li>See: <a href="#indextox"><code>indexToX</code></a></li>
+					<li>See: <a href="#xytoindex"><code>xyToIndex</code></a></li>
+				</ul>
+				<a href="#lerp" id="lerp" style="color: inherit; text-decoration: none;">
+					<h4>lerp</h4>
+				</a>
+				<pre><code class="language-ts"><span style="color: #795E26">lerp</span><span style="color: #000000">(</span><span style="color: #001080">a</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">, </span><span style="color: #001080">b</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">, </span><span style="color: #001080">t</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">, </span><span style="color: #001080">round</span><span style="color: #000000">?: </span><span style="color: #001080">boolean</span><span style="color: #000000">): </span><span style="color: #001080">number</span><span style="color: #000000">;</span>
+</code></pre>
+				<p>Linear interpolation between two numbers</p>
+				<p>Example:</p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">n</span><span style="color: #000000"> = </span><span style="color: #795E26">lerp</span><span style="color: #000000">(</span><span style="color: #098658">10</span><span style="color: #000000">, </span><span style="color: #098658">20</span><span style="color: #000000">, </span><span style="color: #098658">0.5</span><span style="color: #000000">);</span>
+<span style="color: #008000">// n = 15</span>
+</code></pre>
+				<a href="#lerpangle" id="lerpangle" style="color: inherit; text-decoration: none;">
+					<h4>lerpAngle</h4>
+				</a>
+				<pre><code class="language-ts"><span style="color: #795E26">lerpAngle</span><span style="color: #000000">(</span><span style="color: #001080">a</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">, </span><span style="color: #001080">b</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">, </span><span style="color: #001080">t</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">): </span><span style="color: #001080">number</span><span style="color: #000000">;</span>
+</code></pre>
+				<p>Linear interpolation between two angles via shortest angle</p>
+				<p>Example:</p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">a</span><span style="color: #000000"> = </span><span style="color: #795E26">lerpAngle</span><span style="color: #000000">(</span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #267F99">Math</span><span style="color: #000000">.PI * </span><span style="color: #098658">1.5</span><span style="color: #000000">, </span><span style="color: #098658">0.5</span><span style="color: #000000">);</span>
+<span style="color: #008000">// a = -0.7853981633974483</span>
+</code></pre>
+				<ul>
+					<li>Since: <code>3.2.0</code></li>
+				</ul>
+				<a href="#mid" id="mid" style="color: inherit; text-decoration: none;">
+					<h4>mid</h4>
+				</a>
+				<pre><code class="language-ts"><span style="color: #795E26">mid</span><span style="color: #000000">(</span><span style="color: #001080">a</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">, </span><span style="color: #001080">b</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">): </span><span style="color: #001080">number</span><span style="color: #000000">;</span>
+</code></pre>
+				<p>Returns the mid value between two numbers</p>
+				<p>Example:</p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">n</span><span style="color: #000000"> = </span><span style="color: #795E26">mid</span><span style="color: #000000">(</span><span style="color: #098658">100</span><span style="color: #000000">, </span><span style="color: #098658">200</span><span style="color: #000000">);</span>
+<span style="color: #008000">// n = 150</span>
+</code></pre>
+				<a href="#normalize" id="normalize" style="color: inherit; text-decoration: none;">
+					<h4>normalize</h4>
+				</a>
+				<pre><code class="language-ts"><span style="color: #795E26">normalize</span><span style="color: #000000">(</span><span style="color: #001080">n</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">, </span><span style="color: #001080">min</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">, </span><span style="color: #001080">max</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">): </span><span style="color: #001080">number</span><span style="color: #000000">;</span>
+</code></pre>
+				<p>Normalizes a value between a minimum and maximum</p>
+				<p>Example:</p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">n</span><span style="color: #000000"> = </span><span style="color: #795E26">normalize</span><span style="color: #000000">(</span><span style="color: #098658">500</span><span style="color: #000000">, </span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #098658">1000</span><span style="color: #000000">);</span>
+<span style="color: #008000">// n = 0.5</span>
+</code></pre>
+				<a href="#radianstodegrees" id="radianstodegrees" style="color: inherit; text-decoration: none;">
+					<h4>radiansToDegrees</h4>
+				</a>
+				<pre><code class="language-ts"><span style="color: #795E26">radiansToDegrees</span><span style="color: #000000">(</span><span style="color: #001080">radians</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">): </span><span style="color: #001080">number</span><span style="color: #000000">;</span>
+</code></pre>
+				<p>Converts an angle in radians to degrees.</p>
+				<p>Example:</p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">degrees</span><span style="color: #000000"> = </span><span style="color: #795E26">radiansToDegrees</span><span style="color: #000000">(</span><span style="color: #267F99">Math</span><span style="color: #000000">.PI);</span>
+<span style="color: #008000">// degrees = 180</span>
+</code></pre>
+				<ul>
+					<li>Since: <code>3.4.0</code></li>
+					<li>See: <a href="#degreestoradians"><code>degreesToRadians</code></a></li>
+				</ul>
+				<a href="#round" id="round" style="color: inherit; text-decoration: none;">
+					<h4>round</h4>
+				</a>
+				<pre><code class="language-ts"><span style="color: #795E26">round</span><span style="color: #000000">(</span><span style="color: #001080">value</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">, </span><span style="color: #001080">decimals</span><span style="color: #000000">?: </span><span style="color: #001080">number</span><span style="color: #000000">): </span><span style="color: #001080">number</span><span style="color: #000000">;</span>
+</code></pre>
+				<p>Rounds a value to a specified number of decimal places.</p>
+				<p>Example:</p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">n</span><span style="color: #000000"> = </span><span style="color: #795E26">round</span><span style="color: #000000">(</span><span style="color: #098658">123.456789</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">);</span>
+<span style="color: #008000">// n = 123.45</span>
+</code></pre>
+				<a href="#sign" id="sign" style="color: inherit; text-decoration: none;">
+					<h4>sign</h4>
+				</a>
+				<pre><code class="language-ts"><span style="color: #795E26">sign</span><span style="color: #000000">(</span><span style="color: #001080">n</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">): </span><span style="color: #001080">number</span><span style="color: #000000">;</span>
+</code></pre>
+				<p>Returns the sign of a number.</p>
+				<p>Example:</p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">n</span><span style="color: #000000"> = </span><span style="color: #795E26">sign</span><span style="color: #000000">(-</span><span style="color: #098658">100</span><span style="color: #000000">);</span>
+<span style="color: #008000">// n = -1</span>
+</code></pre>
+				<a href="#wrapradians" id="wrapradians" style="color: inherit; text-decoration: none;">
+					<h4>wrapRadians</h4>
+				</a>
+				<pre><code class="language-ts"><span style="color: #795E26">wrapRadians</span><span style="color: #000000">(</span><span style="color: #001080">radians</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">): </span><span style="color: #001080">number</span><span style="color: #000000">;</span>
+</code></pre>
+				<p>Wraps radians between <code>0</code> and <code>2PI</code>.</p>
+				<p>Example:</p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">angle</span><span style="color: #000000"> = </span><span style="color: #795E26">wrapRadians</span><span style="color: #000000">(</span><span style="color: #267F99">Math</span><span style="color: #000000">.PI * </span><span style="color: #098658">4.5</span><span style="color: #000000">);</span>
+<span style="color: #008000">// angle = Math.PI / 2</span>
+</code></pre>
+				<ul>
+					<li>Since: <code>3.7.0</code></li>
+				</ul>
+				<a href="#xytoindex" id="xytoindex" style="color: inherit; text-decoration: none;">
+					<h4>xyToIndex</h4>
+				</a>
+				<pre><code class="language-ts"><span style="color: #795E26">xyToIndex</span><span style="color: #000000">(</span><span style="color: #001080">x</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">, </span><span style="color: #001080">y</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">, </span><span style="color: #001080">width</span><span style="color: #000000">: </span><span style="color: #001080">number</span><span style="color: #000000">): </span><span style="color: #001080">number</span><span style="color: #000000">;</span>
+</code></pre>
+				<p>Converts grid coordinates to an index.</p>
+				<p>Example:</p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">index</span><span style="color: #000000"> = </span><span style="color: #795E26">xyToIndex</span><span style="color: #000000">(</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">);</span>
+<span style="color: #008000">// index = 4</span>
+</code></pre>
+				<ul>
+					<li>See: <a href="#indextox"><code>indexToX</code></a></li>
+					<li>See: <a href="#indextoy"><code>indexToY</code></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/rectangle.html" class="tsd-kind-icon">Rectangle</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/icircle.html" class="tsd-kind-icon">ICircle</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ipoint.html" class="tsd-kind-icon">IPoint</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/irectangle.html" class="tsd-kind-icon">IRectangle</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#tau" class="tsd-kind-icon">TAU</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#approximately" class="tsd-kind-icon">approximately</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#average" class="tsd-kind-icon">average</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#clamp" class="tsd-kind-icon">clamp</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#degreestoradians" class="tsd-kind-icon">degrees<wbr>ToRadians</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#distance" class="tsd-kind-icon">distance</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#indextox" class="tsd-kind-icon">index<wbr>ToX</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#indextoy" class="tsd-kind-icon">index<wbr>ToY</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#lerp" class="tsd-kind-icon">lerp</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#lerpangle" class="tsd-kind-icon">lerp<wbr>Angle</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#mid" class="tsd-kind-icon">mid</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#normalize" class="tsd-kind-icon">normalize</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#radianstodegrees" class="tsd-kind-icon">radians<wbr>ToDegrees</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#round" class="tsd-kind-icon">round</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#sign" class="tsd-kind-icon">sign</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#wrapradians" class="tsd-kind-icon">wrap<wbr>Radians</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#xytoindex" class="tsd-kind-icon">xy<wbr>ToIndex</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
