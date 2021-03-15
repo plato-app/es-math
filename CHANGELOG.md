@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.7.1
+
+* Align CommonJS/ES6 packaging
+
 ## 3.7.0
 
 * Add `wrapRadians` function

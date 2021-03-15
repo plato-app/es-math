@@ -1,6 +1,6 @@
 {
 	"name": "@plato/math",
-	"version": "3.7.0",
+	"version": "3.7.1",
 	"description": "Math-related objects and utility functions, biased towards 2D & 3D game development.",
 	"keywords": [
 		"plato",
